@@ -2,10 +2,9 @@ import React from 'react';
 import { Carousel } from 'react-responsive-carousel';
 import { Typography, Grid, Button, SvgIcon } from '@material-ui/core';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
-import img1 from '../images/home-carousel/1.jpg';
-import img2 from '../images/home-carousel/2.jpg';
-import img3 from '../images/home-carousel/3.jpg';
-import img4 from '../images/home-carousel/4.jpg';
+import ArborImg from '../images/home-carousel/Arbor.jpg';
+import ShoesImg from '../images/home-carousel/Shoes.jpg';
+import BouquetsImg from '../images/home-carousel/Bouquets.jpg';
 import { styled, makeStyles } from '@material-ui/core/styles';
 import clsx from 'clsx';
 
@@ -120,16 +119,13 @@ export default function HomeCarousel(props) {
                 </Grid>
                 <StyledCarousel style={{ height: "60vh" }} autoPlay interval={5000} transitionTime={3000} showStatus={false} showArrows={false} showThumbs={false} infiniteLoop>
                     <div className={clsx(classes.carouselImageContainer)}>
-                        <img src={img1} />
+                        <img src={ShoesImg} />
                     </div>
                     <div className={classes.carouselImageContainer}>
-                        <img src={img2} />
+                        <img src={ArborImg} />
                     </div>
                     <div className={classes.carouselImageContainer}>
-                        <img src={img3} />
-                    </div>
-                    <div className={classes.carouselImageContainer}>
-                        <img src={img4} />
+                        <img src={BouquetsImg} />
                     </div>
                 </StyledCarousel>
             </div>

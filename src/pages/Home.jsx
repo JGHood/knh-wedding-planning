@@ -1,7 +1,6 @@
-import React, { useState, useContext } from 'react';
 import HomeCarousel from '../components/HomeCarousel';
-import { AppBar, Toolbar, Grid, Typography, Button, Card, CardContent } from '@material-ui/core';
-import { styled, makeStyles } from '@material-ui/core/styles';
+import {Grid, Typography, Card, CardContent } from '@material-ui/core';
+import {makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles({
     card: {

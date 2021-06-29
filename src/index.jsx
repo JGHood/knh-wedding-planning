@@ -11,28 +11,30 @@ const cursive = "'Rogue Script', cursive";
 
 let theme = createMuiTheme({
   typography: {
-    fontFamily:[
+    fontFamily: [
       'Montserrat',
       'Roboto',
       'Helvetica',
       'sans-serif'
-    ].join(',') ,
+    ].join(','),
     h4: {
       fontFamily:
-      [
-        'Cinzel',
-        'cursive',
-      ].join(','),
+        [
+          'Cinzel',
+          'cursive',
+        ].join(','),
       fontSize: '1.5rem',
       '@media (min-width:600px)': {
         fontSize: "2rem",
       },
-
+      '@media (min-width:1300)': {
+        fontSize: "2.5rem"
+      },
       '@media (min-width:1500px)': {
-        fontSize: "3rem"
+        fontSize: "2.5rem"
       }
     }
-      
+
   },
   palette: {
     primary: {
@@ -50,7 +52,7 @@ let theme = createMuiTheme({
 ReactDOM.render(
   <React.StrictMode>
     <ThemeProvider theme={theme}>
-      <CssBaseline/>
+      <CssBaseline />
       <App />
     </ThemeProvider>
   </React.StrictMode>,

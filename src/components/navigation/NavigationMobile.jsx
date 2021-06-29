@@ -1,6 +1,6 @@
-import React, {useContext, useState, useEffect} from 'react';
-import { BrowserRouter as Router, Route, NavLink } from 'react-router-dom';
-import { AppBar, Toolbar, Grid, Typography, Drawer, Button, Tab, Tabs } from '@material-ui/core';
+import {useContext, useState} from 'react';
+import { NavLink } from 'react-router-dom';
+import { AppBar, Toolbar, Grid, Typography, Drawer } from '@material-ui/core';
 import { signOut } from '../../firebase';
 import { useTheme, makeStyles } from '@material-ui/core/styles';
 import styled from 'styled-components';

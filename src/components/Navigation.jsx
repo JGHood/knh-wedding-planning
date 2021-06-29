@@ -1,4 +1,3 @@
-import React from 'react';
 import NavigationDesktop from './navigation/NavigationDesktop';
 import NavigationMobile from './navigation/NavigationMobile';
 import { useMediaQuery } from '@material-ui/core';
