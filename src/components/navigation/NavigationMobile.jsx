@@ -3,8 +3,7 @@ import { NavLink } from 'react-router-dom';
 import { AppBar, Toolbar, Grid, Typography, Drawer } from '@material-ui/core';
 import { signOut } from '../../firebase';
 import { useTheme, makeStyles } from '@material-ui/core/styles';
-import styled from 'styled-components';
-import Logo from '../../images/logo.png';
+import Logo from '../../images/Logo.svg';
 import PinterestIcon from '@material-ui/icons/Pinterest';
 import TwitterIcon from '@material-ui/icons/Twitter';
 import InstagramIcon from '@material-ui/icons/Instagram';
@@ -25,22 +24,6 @@ export default function NavigationMobile() {
       };
     
     const theme = useTheme();
-    const StyledLinkMobile = styled(NavLink)`
-    color: ${theme.palette.primary.main};
-    text-decoration: none;
-    margin-bottom: 0;
-    margin-left: 0.5px;
-    margin-right: 0.5px;
-
-    &:hover{
-        color: ${theme.palette.secondary.main}
-    }
-    &.${props => props.activeClassName} {
-    color: ${theme.palette.secondary.main};
-    font-weight: bold;
-    }
-    `;
-
     const useStyles = makeStyles({
     socialMediaIcons: {
         color: theme.palette.primary.main,
@@ -51,7 +34,11 @@ export default function NavigationMobile() {
     },
     styledLink: {
         textDecoration: "none",
-        color: "white",
+        color: theme.palette.primary.main,
+    },
+    styledLinkActive: {
+        color: theme.palette.secondary.main,
+        fontWeight: "bold",
     }
         });
     const classes = useStyles();
@@ -65,16 +52,16 @@ export default function NavigationMobile() {
                         justify="center"
                     >
 
-                        <StyledLinkMobile onClick={toggleDrawer(false)} exact activeClassName="any" exact to='/'><Typography variant="h5">HOME</Typography></StyledLinkMobile>
-                        <StyledLinkMobile onClick={toggleDrawer(false)} exact activeClassName="any" exact to='/matcher'><Typography variant="h5">TOOLS</Typography></StyledLinkMobile>
-                        {!isAuthenticated && <StyledLinkMobile onClick={toggleDrawer(false)} exact activeClassName="any" exact to='/signin'><Typography variant="h5">SIGN IN</Typography></StyledLinkMobile>}
-                        {isAuthenticated && <StyledLinkMobile onClick={() => {signOut(); toggleDrawer(false); window.location.reload()}} to="/"><Typography variant="p">SIGN OUT</Typography></StyledLinkMobile>}
+                        <NavLink className={classes.styledLink} onClick={toggleDrawer(false)} exact activeClassName={classes.styledLinkActive} to='/'><Typography variant="body1">HOME</Typography></NavLink>
+                        <NavLink className={classes.styledLink} onClick={toggleDrawer(false)} exact activeClassName={classes.styledLinkActive} to='/matcher'><Typography variant="body1">TOOLS</Typography></NavLink>
+                        {!isAuthenticated && <NavLink className={classes.styledLink} onClick={toggleDrawer(false)} exact activeClassName={classes.styledLinkActive} to='/signin'><Typography variant="body1">SIGN IN</Typography></NavLink>}
+                        {isAuthenticated && <NavLink className={classes.styledLink} onClick={() => {signOut(); toggleDrawer(false); window.location.reload()}} activeClassName={classes.styledLinkActive} to="/"><Typography variant="p">SIGN OUT</Typography></NavLink>}
                         <Grid item lg={3} >
                         <div style={{marginTop:"2rem"}}>                          
-                           <a className={classes.styledLink} href="https://www.pinterest.com" target="_blank"><PinterestIcon fontSize="large" className={classes.socialMediaIcons}></PinterestIcon></a>
-                           <a className={classes.styledLink} href="https://www.twitter.com" target="_blank"><TwitterIcon fontSize="large" className={classes.socialMediaIcons}/></a>
-                           <a className={classes.styledLink} href="https://www.facebook.com" target="_blank"><FacebookIcon fontSize="large" className={classes.socialMediaIcons}/></a>
-                           <a className={classes.styledLink} href="https://www.instagram.com" target="_blank"><InstagramIcon fontSize="large" className={classes.socialMediaIcons}/></a>
+                           <a className={classes.styledLink} rel="noreferrer" href="https://www.pinterest.com" target="_blank"><PinterestIcon fontSize="large" className={classes.socialMediaIcons}></PinterestIcon></a>
+                           <a className={classes.styledLink} rel="noreferrer" href="https://www.twitter.com" target="_blank"><TwitterIcon fontSize="large" className={classes.socialMediaIcons}/></a>
+                           <a className={classes.styledLink} rel="noreferrer" href="https://www.facebook.com" target="_blank"><FacebookIcon fontSize="large" className={classes.socialMediaIcons}/></a>
+                           <a className={classes.styledLink} rel="noreferrer" href="https://www.instagram.com" target="_blank"><InstagramIcon fontSize="large" className={classes.socialMediaIcons}/></a>
                         </div>
                     </Grid>
                     </Grid>

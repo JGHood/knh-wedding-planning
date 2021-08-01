@@ -3,11 +3,9 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { createMuiTheme, ThemeProvider, responsiveFontSizes } from '@material-ui/core/styles';
+import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
 import CssBaseline from "@material-ui/core/CssBaseline";
 
-const mainFont = "'Roboto', sans-serif";
-const cursive = "'Rogue Script', cursive";
 
 let theme = createMuiTheme({
   typography: {
@@ -17,6 +15,24 @@ let theme = createMuiTheme({
       'Helvetica',
       'sans-serif'
     ].join(','),
+    h1: {
+      fontSize: '2rem',
+      '@media (min-width:768px)': {
+        fontSize: "2rem",
+      },
+      '@media (min-width:1300px)': {
+        fontSize: "4rem"
+      },
+    },
+    h2: {
+      fontSize: '2rem',
+      '@media (min-width:768px)': {
+        fontSize: "2.5rem",
+      },
+      '@media (min-width:1300px)': {
+        fontSize: "3rem"
+      },
+    },
     h4: {
       fontFamily:
         [
@@ -24,17 +40,27 @@ let theme = createMuiTheme({
           'cursive',
         ].join(','),
       fontSize: '1.5rem',
-      '@media (min-width:600px)': {
+      '@media (min-width:768px)': {
         fontSize: "2rem",
       },
-      '@media (min-width:1300)': {
+      '@media (min-width:1300px)': {
         fontSize: "2.5rem"
       },
-      '@media (min-width:1500px)': {
-        fontSize: "2.5rem"
-      }
+    },
+    h5: {
+      fontFamily:
+      [
+        'Cinzel',
+        'cursive',
+      ].join(','),
+    fontSize: '1rem',
+    '@media (min-width:768px)': {
+      fontSize: "1.5rem",
+    },
+    '@media (min-width:1300px)': {
+      fontSize: "2rem"
+    },
     }
-
   },
   palette: {
     primary: {
@@ -48,7 +74,6 @@ let theme = createMuiTheme({
     }
   },
 });
-//theme = responsiveFontSizes(theme);
 ReactDOM.render(
   <React.StrictMode>
     <ThemeProvider theme={theme}>

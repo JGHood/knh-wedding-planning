@@ -7,8 +7,7 @@ import Typography from '@material-ui/core/Typography';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
 import { signOut } from '../../firebase';
 import { useTheme, makeStyles } from '@material-ui/core/styles';
-import styled from 'styled-components';
-import Logo from '../../images/logo.png';
+import Logo from '../../images/Logo.svg';
 import PinterestIcon from '@material-ui/icons/Pinterest';
 import TwitterIcon from '@material-ui/icons/Twitter';
 import InstagramIcon from '@material-ui/icons/Instagram';
@@ -16,39 +15,29 @@ import FacebookIcon from '@material-ui/icons/Facebook';
 import { AuthContext } from '../../Authentication';
 
 export default function NavigationDesktop() {
-    const largeDesktop = useMediaQuery('(max-width:1279px)');
-    console.log(largeDesktop);
+    const smallDesktop = useMediaQuery('(max-width:1280px)');
     const {isAuthenticated} = useContext(AuthContext);
     const theme = useTheme();
-    const StyledLink = styled(NavLink)`
-    color: white;
-    text-decoration: none;
-    margin-bottom: 0;
-    margin-left: 8px;
-    margin-right: 8px;
-    font-size: 16px;
-
-    &:hover{
-        color: ${theme.palette.secondary.main}
-    }
-    &.${props => props.activeClassName} {
-    color: ${theme.palette.secondary.main};
-    padding-bottom: 15px;
-    border-bottom: 5px;
-    border-bottom-style: solid;
-    }
-    `;
-
     const useStyles = makeStyles({
     socialMediaIcons: {
         marginRight: "0.5rem",
         "&:hover": {
-            color: theme.palette.secondary.main,
+            color: 'blue',
         },
     },
     styledLink: {
-        textDecoration: "none",
-        color: "white",
+        color: 'white',
+    textDecoration: 'none',
+    marginBottom: 0,
+    marginLeft: '8px',
+    marginRight: '8px',
+    fontSize: '16px',
+    }, 
+    styledLinkActive: {
+        color: theme.palette.secondary.main,
+        paddingBottom: '15px',
+        borderBottom: '5px',
+        borderBottomStyle: 'solid',
     }
         });
     const classes = useStyles();
@@ -79,7 +68,7 @@ export default function NavigationDesktop() {
                     >
                         <Grid 
                             item 
-                            xs={4}
+                            xs={5}
                             container
                             direction="row"
                             alignItems="baseline"
@@ -94,9 +83,9 @@ export default function NavigationDesktop() {
                             alignItems="center"
                             justify="center"
                         >
-                            <img src={Logo} style={{ height: "120px", margin: "20px" }} />
+                            <img alt="logo of a plant and a bee" src={Logo} style={{ height: "120px", margin: "20px" }} />
                         </Grid>
-                        <Grid item xs={4}>
+                        <Grid item xs={5}>
                             <Typography variant="h4" color="secondary">Weddings</Typography>
                         </Grid>
                     </Grid>
@@ -106,13 +95,14 @@ export default function NavigationDesktop() {
                         lg={3}
                         direction="row"
                         alignItems="baseline"
-                        justify={largeDesktop ? "center" : "flex-end"}
+                        justify={smallDesktop ? "center" : "flex-end"}
                         style={{ height: "100%" }}
                     >
-                        <StyledLink exact activeClassName="any" exact to='/'><Typography variant="p">HOME</Typography></StyledLink>
-                        <StyledLink exact activeClassName="any" exact to='/matcher'><Typography variant="p">TOOLS</Typography></StyledLink>
-                        {!isAuthenticated && <StyledLink exact activeClassName="any" exact to='/signin'><Typography variant="p">SIGN IN</Typography></StyledLink>}
-                        {isAuthenticated && <StyledLink onClick={() => {signOut(); window.location.reload()}} to="/"><Typography variant="p">SIGN OUT</Typography></StyledLink>}
+                        <NavLink className={classes.styledLink} exact activeClassName={classes.styledLinkActive} to='/'><Typography variant="body1">HOME</Typography></NavLink>
+                        <NavLink className={classes.styledLink} exact activeClassName={classes.styledLinkActive} to='/matcher'><Typography variant="body1">TOOLS</Typography></NavLink>
+                        <NavLink className={classes.styledLink} exact activeClassName={classes.styledLinkActive} to='/services'><Typography variant="body1">SERVICES</Typography></NavLink>
+                        {/*{!isAuthenticated && <NavLink className={classes.styledLink} exact activeClassName={classes.styledLinkActive}  to='/signin'><Typography variant="p">SIGN IN</Typography></NavLink>}
+                        {isAuthenticated && <NavLink className={classes.styledLink} onClick={() => {signOut(); window.location.reload()}} to="/"><Typography variant="p">SIGN OUT</Typography></NavLink>}*/}
                     </Grid>
                 </Grid>
 
