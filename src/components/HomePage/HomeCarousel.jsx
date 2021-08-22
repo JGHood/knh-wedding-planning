@@ -95,12 +95,18 @@ export default function HomeCarousel(props) {
     },
     ct1: {
         animation: "$fadeIn1 0.5s ease-in-out",
+        fontFamily: "Cinzel",
+        fontSize: '48px',
     },
     ct2: {
         animation: "$fadeIn2 1.0s ease-in-out",
+        fontFamily: "Cinzel",
+        fontSize: '32px',
     },
     ct3: {
         animation: "$fadeIn3 1.5s ease-in-out",
+        fontFamily: "Cinzel",
+        fontSize: '32px',
     },
     ct4: {
         marginTop: "3rem",
@@ -125,10 +131,10 @@ export default function HomeCarousel(props) {
                 justify="space-evenly"
                 alignItems="center"
             >
-                <Grid item className={classes.ct1}><Typography variant="h5">{props.ct1}</Typography></Grid>
-                <Grid item className={classes.ct2}><Typography variant="h5">{props.ct2}</Typography></Grid>
-                <Grid item className={classes.ct3}><Typography variant="h5">{props.ct3}</Typography></Grid>
-                <Grid item className={classes.ct4}><NavLink exact to='/services'><Button variant="outlined" color="secondary"><Typography variant="button2">{props.ct4}</Typography></Button></NavLink></Grid>
+                <Grid item className={classes.ct1}>{props.ct1}</Grid>
+                <Grid item className={classes.ct2}>{props.ct2}</Grid>
+                <Grid item className={classes.ct3}>{props.ct3}</Grid>
+                {props.ct4 && <Grid item className={classes.ct4}><NavLink exact to='/services'><Button variant="outlined" color="secondary">{props.ct4}</Button></NavLink></Grid>}
             </Grid>
             
 

@@ -26,7 +26,6 @@ function App() {
             <Route exact path="/services" component={Services} />
             <Route exact path="/" component={Home} />
           </div>
-          <Footer/>
         </div>
       </Router>
     </AuthProvider>
