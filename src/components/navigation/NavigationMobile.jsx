@@ -35,6 +35,8 @@ export default function NavigationMobile() {
     styledLink: {
         textDecoration: "none",
         color: theme.palette.primary.main,
+        marginTop: '8px',
+        fontFamily: 'Cinzel',
     },
     styledLinkActive: {
         color: theme.palette.secondary.main,
@@ -52,14 +54,17 @@ export default function NavigationMobile() {
                         justify="center"
                     >
 
-                        <NavLink className={classes.styledLink} onClick={toggleDrawer(false)} exact activeClassName={classes.styledLinkActive} to='/'><Typography variant="body1">HOME</Typography></NavLink>
-                        <NavLink className={classes.styledLink} onClick={toggleDrawer(false)} exact activeClassName={classes.styledLinkActive} to='/matcher'><Typography variant="body1">TOOLS</Typography></NavLink>
+                        <NavLink className={classes.styledLink} onClick={toggleDrawer(false)} exact activeClassName={classes.styledLinkActive} to='/'><Typography variant="h2">HOME</Typography></NavLink>
+                        <NavLink className={classes.styledLink} onClick={toggleDrawer(false)} exact activeClassName={classes.styledLinkActive} to='/services'><Typography variant="h2">SERVICES</Typography></NavLink>
+                        <NavLink className={classes.styledLink} onClick={toggleDrawer(false)} exact activeClassName={classes.styledLinkActive} to='/about'><Typography variant="h2">ABOUT US</Typography></NavLink>
+                        <NavLink className={classes.styledLink} onClick={toggleDrawer(false)} exact activeClassName={classes.styledLinkActive} to='/gallery'><Typography variant="h2">GALLERY</Typography></NavLink>
+                        <NavLink className={classes.styledLink} onClick={toggleDrawer(false)} exact activeClassName={classes.styledLinkActive} to='/blog'><Typography variant="h2">BLOG</Typography></NavLink>
+                        <NavLink className={classes.styledLink} onClick={toggleDrawer(false)} exact activeClassName={classes.styledLinkActive} to='/contact'><Typography variant="h2">CONTACT</Typography></NavLink>
                         {/*!isAuthenticated && <NavLink className={classes.styledLink} onClick={toggleDrawer(false)} exact activeClassName={classes.styledLinkActive} to='/signin'><Typography variant="body1">SIGN IN</Typography></NavLink>*/}
                         {/*isAuthenticated && <NavLink className={classes.styledLink} onClick={() => {signOut(); toggleDrawer(false); window.location.reload()}} activeClassName={classes.styledLinkActive} to="/"><Typography variant="p">SIGN OUT</Typography></NavLink>*/}
                         <Grid item lg={3} >
                         <div style={{marginTop:"2rem"}}>                          
                            <a className={classes.styledLink} rel="noreferrer" href="https://www.pinterest.com" target="_blank"><PinterestIcon fontSize="large" className={classes.socialMediaIcons}></PinterestIcon></a>
-                           <a className={classes.styledLink} rel="noreferrer" href="https://www.twitter.com" target="_blank"><TwitterIcon fontSize="large" className={classes.socialMediaIcons}/></a>
                            <a className={classes.styledLink} rel="noreferrer" href="https://www.facebook.com" target="_blank"><FacebookIcon fontSize="large" className={classes.socialMediaIcons}/></a>
                            <a className={classes.styledLink} rel="noreferrer" href="https://www.instagram.com" target="_blank"><InstagramIcon fontSize="large" className={classes.socialMediaIcons}/></a>
                         </div>
@@ -67,7 +72,6 @@ export default function NavigationMobile() {
                     </Grid>
             </Drawer>
         <AppBar position="static" style={{marginBottom:0, paddingBottom:0}}>
-            
             <Toolbar style={{marginBottom:0, paddingBottom:0}}>
                     <Grid
                         container
@@ -82,12 +86,8 @@ export default function NavigationMobile() {
                             justify= "center"
                         >
                             <Grid item xs={2}/>
-                            <Grid item container justify="center" xs={8}><img alt="Website logo: a plant and a bee in a hexagon outline" src={Logo} style={{ height: "120px", margin: "20px" }} /></Grid>
+                            <Grid item container justify="center" xs={8}><img alt="Website logo: a plant and a bee in a hexagon outline"  src={Logo} style={{ height: "80px", margin: "10px" }} /></Grid>
                             <Grid item xs={2} container justify="flex-end"  ><MenuIcon alt="Menu to open navigation" fontSize="large" color="secondary" onClick={toggleDrawer(true)}>Open</MenuIcon></Grid>
-                            
-                        </Grid>
-                        <Grid item >
-                            <Typography variant="h4" color="secondary">Green Bee Weddings</Typography>
                         </Grid>
                     </Grid>
             </Toolbar>

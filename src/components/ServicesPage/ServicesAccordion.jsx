@@ -91,7 +91,6 @@ export default function SimpleAccordion() {
                 >
                     <div>
                         <Typography className={classes.heading}>Middle Plan</Typography>
-                        {!Plan2 && <Typography className={classes.previewText} variant="body1">Lorem ipsum dolor sit amet...</Typography>}
                     </div>
                 </AccordionSummary>
                 <AccordionDetails>

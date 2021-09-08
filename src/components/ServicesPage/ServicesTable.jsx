@@ -25,13 +25,13 @@ function createData(label, DayOfPlan, MiddlePlan, FullServicePlan) {
 
 export default function ServicesTable() {
     const isDesktop = useMediaQuery('(min-width:768px)');
-    const tableScroll = useMediaQuery('(min-width:550px)');
+    const tableScroll = useMediaQuery('(min-width:360px)');
     const useStyles = makeStyles((theme) => ({
         table: {
             fontSize: "300px"
         },
         tableContainer: {
-            width: isDesktop ? "70%" : "100%",
+            width: isDesktop ? "70%" : "97%",
             marginTop: theme.typography.fontSize,
         },
         tableTitle: {
@@ -41,15 +41,30 @@ export default function ServicesTable() {
             display: "flex",
             justifyContent: "center"
         },
-        styledTableCell: {
+        styledTableHeader: {
             backgroundColor: theme.palette.primary.main,
             color: theme.palette.common.white,
-            fontWeight: theme.typography.fontWeightBold
+            textAlign: 'center',
+            margin: 0,
+            [theme.breakpoints.down('xs')]: {
+                maxWidth: '90px',
+                fontSize: '13px',
+              },
+        },
+        styledTableCell: {
+            [theme.breakpoints.down('xs')]: {
+                maxWidth: '90px',
+                fontSize: '13px',
+              },
         },
         styledTableRow: {
             '&:nth-of-type(odd)': {
                 backgroundColor: "#f7f7f7",
               },
+              margin: 0,
+        },
+        rotate: {
+            fontSize: '12px',
         }
     }));
     const classes = useStyles();
@@ -63,8 +78,8 @@ export default function ServicesTable() {
         createData('Detailed day-of timeline', <Check />, <Check />, <Check />),
         createData('Wedding Rehearsal Coordination', <Check />, <Check />, ''),
         createData('Setup/Decor Support', <Check />, <Check />, ''),
-        createData('Vendor Recommendations', <Check />, <Check />, <Check />),
-        createData('Day-Of Coordination', '8 hours', '12 hours', ''),
+        createData('Vendor Recs', <Check />, <Check />, <Check />),
+        createData('Day-Of Coordination', '8 hrs', '12 hrs', ''),
         createData('Custom Budget & Payment Spreadsheet', '', <Check />, <Check />),
         createData('Custom Mood Boards', '', <Check />, ''),
         createData('Custom monthly checklist', '', <Check />, <Check />),
@@ -83,25 +98,26 @@ export default function ServicesTable() {
         <>
         <Typography className={classes.tableTitle} variant="h2">Compare Plans</Typography>
         {!tableScroll && <Typography variant="body1"><ArrowBackIosIcon fontSize="inherit" /> Swipe table to view all plan details <ArrowForwardIosIcon fontSize="inherit"/></Typography>}
+        {!tableScroll && <Typography className={classes.rotate} variant="body1">(or, rotate your device)</Typography>}
             <TableContainer className={classes.tableContainer} component={Paper}>
                 <Table className={classes.table} size="small" aria-label="Table comparison of plans">
                     <TableHead>
                         <TableRow>
-                            <TableCell className={classes.styledTableCell}>Services Included</TableCell>
-                            <TableCell className={classes.styledTableCell} align="center">Day/Month Of Planning</TableCell>
-                            <TableCell className={classes.styledTableCell} align="center">Full Planning</TableCell>
-                            <TableCell className={classes.styledTableCell} align="center">Virtual Planning</TableCell>
+                            <TableCell className={classes.styledTableHeader}>Services Included</TableCell>
+                            <TableCell className={classes.styledTableHeader} align="center">Day/Month Of Planning</TableCell>
+                            <TableCell className={classes.styledTableHeader} align="center">Full Planning</TableCell>
+                            <TableCell className={classes.styledTableHeader} align="center">Virtual Planning</TableCell>
                         </TableRow>
                     </TableHead>
                     <TableBody>
                         {rows.map((row) => (
                             <TableRow className={classes.styledTableRow} key={row.label}>
-                                <TableCell style={{ width: "15%" }} component="main" scope="row">
+                                <TableCell className={classes.styledTableCell} component="main" scope="row">
                                     {row.label}
                                 </TableCell>
-                                <TableCell style={{ width: "20%" }} align="center">{row.DayOfPlan}</TableCell>
-                                <TableCell style={{ width: "20%" }} align="center">{row.MiddlePlan}</TableCell>
-                                <TableCell style={{ width: "20%" }} align="center">{row.FullServicePlan}</TableCell>
+                                <TableCell className={classes.styledTableCell} align="center">{row.DayOfPlan}</TableCell>
+                                <TableCell className={classes.styledTableCell} align="center">{row.MiddlePlan}</TableCell>
+                                <TableCell className={classes.styledTableCell} align="center">{row.FullServicePlan}</TableCell>
                             </TableRow>
                         ))}
                     </TableBody>
