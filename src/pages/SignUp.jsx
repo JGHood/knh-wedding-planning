@@ -1,10 +1,10 @@
-import React, { useState, useContext } from 'react';
+/* import React, { useState, useContext } from 'react';
 import { app, googleProvider } from '../firebase';
 import { AuthContext } from '../Authentication';
 import { Paper, Button, TextField } from '@material-ui/core';
 
 
-export default function SignUp(): JSX.Element {
+export default function SignUp() {
 
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
@@ -42,4 +42,4 @@ export default function SignUp(): JSX.Element {
             </Paper>
         </div>
     )
-}
+} */

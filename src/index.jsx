@@ -18,6 +18,7 @@ let theme = createMuiTheme({
     },
   },
   typography: {
+    fontDisplay: 'optional',
     fontFamily: [
       'Montserrat',
       'Roboto',

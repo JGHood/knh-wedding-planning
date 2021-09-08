@@ -1,11 +1,11 @@
-import React, { useState, useEffect, useContext } from 'react';
+/* import React, { useState, useEffect, useContext } from 'react';
 import { app, googleProvider, signOut } from '../firebase';
 import { AuthContext } from '../Authentication';
 import { Paper, Button, TextField, SvgIcon } from '@material-ui/core';
 import { useHistory } from "react-router-dom";
 
 
-export default function SignUp(): JSX.Element {
+export default function SignUp() {
 
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
@@ -102,4 +102,4 @@ export default function SignUp(): JSX.Element {
             </div>
         </>
     )
-}
+} */
