@@ -18,108 +18,111 @@ var BouquetsXL = "https://firebasestorage.googleapis.com/v0/b/knh-wedding-planni
 
 export default function HomeCarousel(props) {
     const isDesktop = useMediaQuery('(min-width:768px)');
-    
-    const useStyles = makeStyles({
-    "@keyframes fadeIn1": {
-        "0%": {
-            opacity: 0,
-            transform: "translateY(1rem)"
-        },
-        "100%": {
-            opacity: 1,
-            transform: "translateY(0)"
-        }
-    },
-    "@keyframes fadeIn2": {
-        "0%": {
-            opacity: 0,
-            transform: "translateY(1rem)"
-        },
-        "50%": {
-            opacity: 0,
-            transform: "translateY(1rem)"
-        },
-        "100%": {
-            opacity: 1,
-            transform: "translateY(0)"
-        }
-    },
-    "@keyframes fadeIn3": {
-        "0%": {
-            opacity: 0,
-            transform: "translateY(1rem)"
-        },
-        "67%": {
-            opacity: 0,
-            transform: "translateY(1rem)"
-        },
-        "100%": {
-            opacity: 1,
-            transform: "translateY(0)"
-        }
-    },
-    "@keyframes fadeIn4": {
-        "0%": {
-            opacity: 0,
-            transform: "translateY(1rem)"
-        },
-        "75%": {
-            opacity: 0,
-            transform: "translateY(1rem)"
-        },
-        "100%": {
-            opacity: 1,
-            transform: "translateY(0)"
-        }
-    },
-    carouselText: {
-        position: "absolute",
-        zIndex: 2,
-        display: "flex",
-        color: "white",
 
-    },
-    carouselContainer: {
-        backgroundColor: "black",
-        width: "auto",
-        zIndex: 1,
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-    },
-    carouselImageContainer: {
-        maxHeight: isDesktop ? "60vh" : "30vh",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center"
-    },
-    ct1: {
-        animation: "$fadeIn1 0.5s ease-in-out",
-        fontFamily: "Cinzel",
-        fontSize: '48px',
-    },
-    ct2: {
-        animation: "$fadeIn2 1.0s ease-in-out",
-        fontFamily: "Cinzel",
-        fontSize: '32px',
-    },
-    ct3: {
-        animation: "$fadeIn3 1.5s ease-in-out",
-        fontFamily: "Cinzel",
-        fontSize: '32px',
-    },
-    ct4: {
-        marginTop: "3rem",
-        animation: "$fadeIn4 2.0s ease-in-out",
-    },
-    carousel: {
-        
-    },
-    image: {
-        width: "100%",
-        minHeight: isDesktop ? "60vh" : "40vh",
-        opacity: 0.6
-    }
+    const useStyles = makeStyles({
+        "@keyframes fadeIn1": {
+            "0%": {
+                opacity: 0,
+                transform: "translateY(1rem)"
+            },
+            "100%": {
+                opacity: 1,
+                transform: "translateY(0)"
+            }
+        },
+        "@keyframes fadeIn2": {
+            "0%": {
+                opacity: 0,
+                transform: "translateY(1rem)"
+            },
+            "50%": {
+                opacity: 0,
+                transform: "translateY(1rem)"
+            },
+            "100%": {
+                opacity: 1,
+                transform: "translateY(0)"
+            }
+        },
+        "@keyframes fadeIn3": {
+            "0%": {
+                opacity: 0,
+                transform: "translateY(1rem)"
+            },
+            "67%": {
+                opacity: 0,
+                transform: "translateY(1rem)"
+            },
+            "100%": {
+                opacity: 1,
+                transform: "translateY(0)"
+            }
+        },
+        "@keyframes fadeIn4": {
+            "0%": {
+                opacity: 0,
+                transform: "translateY(1rem)"
+            },
+            "75%": {
+                opacity: 0,
+                transform: "translateY(1rem)"
+            },
+            "100%": {
+                opacity: 1,
+                transform: "translateY(0)"
+            }
+        },
+        carouselText: {
+            position: "absolute",
+            zIndex: 2,
+            display: "flex",
+            color: "white",
+
+        },
+        carouselContainer: {
+            backgroundColor: "black",
+            width: "auto",
+            zIndex: 1,
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+        },
+        carouselImageContainer: {
+            maxHeight: isDesktop ? "60vh" : "30vh",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center"
+        },
+        ct1: {
+            animation: "$fadeIn1 0.5s ease-in-out",
+            fontFamily: "Cinzel",
+            fontSize: '48px',
+        },
+        ct2: {
+            animation: "$fadeIn2 1.0s ease-in-out",
+            fontFamily: "Cinzel",
+            fontSize: '32px',
+        },
+        ct3: {
+            animation: "$fadeIn3 1.5s ease-in-out",
+            fontFamily: "Cinzel",
+            fontSize: '32px',
+        },
+        ct4: {
+            marginTop: "3rem",
+            animation: "$fadeIn4 2.0s ease-in-out",
+        },
+        carousel: {
+
+        },
+        image: {
+            width: "100%",
+            minHeight: isDesktop ? "60vh" : "40vh",
+            opacity: 0.6
+        },
+        text: {
+            fontFamily: 'Cinzel',
+        },
     });
     const classes = useStyles();
     return (
@@ -131,24 +134,24 @@ export default function HomeCarousel(props) {
                 justify="space-evenly"
                 alignItems="center"
             >
-                <Grid item className={classes.ct1}>{props.ct1}</Grid>
-                <Grid item className={classes.ct2}>{props.ct2}</Grid>
-                <Grid item className={classes.ct3}>{props.ct3}</Grid>
+                <Grid item className={classes.ct1}><Typography className={classes.text} variant="h1">{props.ct1}</Typography></Grid>
+                <Grid item className={classes.ct2}><Typography className={classes.text} variant="h2">{props.ct2}</Typography></Grid>
+                <Grid item className={classes.ct3}><Typography className={classes.text} variant="h2">{props.ct3}</Typography></Grid>
                 {props.ct4 && <Grid item className={classes.ct4}><NavLink exact to='/services'><Button variant="outlined" color="secondary">{props.ct4}</Button></NavLink></Grid>}
             </Grid>
-            
 
-                <Carousel swipeable autoPlay interval={10000} transitionTime={3000} showStatus={false} showArrows={false} showThumbs={false} showIndicators={isDesktop ? true : false} infiniteLoop>
+
+            <Carousel swipeable autoPlay interval={10000} transitionTime={3000} showStatus={false} showArrows={false} showThumbs={false} showIndicators={isDesktop ? true : false} infiniteLoop>
                 <div className={classes.carouselImageContainer}>
-                            <img className={classes.image} alt="shoes of a groom and bride standing side by sdie" src={ShoesS} srcSet={`${ShoesS} 400w, ${ShoesM} 1000w, ${ShoesL} 2000w ${ShoesXL} 4000w`} sizes="100vw" />
-                        </div>
-                        <div className={classes.carouselImageContainer}>
-                            <img className={classes.image} alt="wedding arbor with flowers on it" src={ArborS} srcSet={`${ArborS} 400w, ${ArborM} 1000w, ${ArborL} 2000w ${ArborXL} 4000w`} sizes="100vw" />
-                        </div>
-                        <div className={classes.carouselImageContainer}>
-                            <img className={classes.image} alt="four flower bouqets laying on wooden table" src={BouquetsS} srcSet={`${BouquetsS} 400w, ${BouquetsM} 1000w, ${BouquetsL} 2000w ${BouquetsXL} 4000w`} sizes="100vw" />
-                        </div>
-                </Carousel>
+                    <img className={classes.image} alt="shoes of a groom and bride standing side by sdie" src={ShoesS} srcSet={`${ShoesS} 400w, ${ShoesM} 1000w, ${ShoesL} 2000w ${ShoesXL} 4000w`} sizes="100vw" />
+                </div>
+                <div className={classes.carouselImageContainer}>
+                    <img className={classes.image} alt="wedding arbor with flowers on it" src={ArborS} srcSet={`${ArborS} 400w, ${ArborM} 1000w, ${ArborL} 2000w ${ArborXL} 4000w`} sizes="100vw" />
+                </div>
+                <div className={classes.carouselImageContainer}>
+                    <img className={classes.image} alt="four flower bouqets laying on wooden table" src={BouquetsS} srcSet={`${BouquetsS} 400w, ${BouquetsM} 1000w, ${BouquetsL} 2000w ${BouquetsXL} 4000w`} sizes="100vw" />
+                </div>
+            </Carousel>
         </div>
     )
 }

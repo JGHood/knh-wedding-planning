@@ -1,22 +1,13 @@
-import { useContext } from 'react';
+//import { useContext } from 'react';
 import NavLink from 'react-router-dom/NavLink';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
-import Grid from '@material-ui/core/Grid';
-import Typography from '@material-ui/core/Typography';
-import useMediaQuery from '@material-ui/core/useMediaQuery';
-import { signOut } from '../../firebase';
+//import useMediaQuery from '@material-ui/core/useMediaQuery';
 import { useTheme, makeStyles } from '@material-ui/core/styles';
 import Logo from '../../images/Logo.svg';
-import PinterestIcon from '@material-ui/icons/Pinterest';
-import TwitterIcon from '@material-ui/icons/Twitter';
-import InstagramIcon from '@material-ui/icons/Instagram';
-import FacebookIcon from '@material-ui/icons/Facebook';
-import { AuthContext } from '../../Authentication';
+//import { AuthContext } from '../../Authentication';
 
 export default function NavigationDesktop() {
-    const smallDesktop = useMediaQuery('(max-width:980px)');
-    const { isAuthenticated } = useContext(AuthContext);
     const theme = useTheme();
     const useStyles = makeStyles({
         socialMediaIcons: {
@@ -35,6 +26,10 @@ export default function NavigationDesktop() {
             paddingBottom: '11px',
             fontFamily: 'Cinzel',
             fontSize: '21px',
+            transition: '0.2s',
+            '&:hover': {
+                color: theme.palette.secondary.main,
+            },
         },
         styledLinkActive: {
             color: theme.palette.secondary.main,
@@ -68,7 +63,7 @@ export default function NavigationDesktop() {
                     <NavLink className={classes.styledLink} exact activeClassName={classes.styledLinkActive} to='/about'>ABOUT</NavLink>
                 </div>
 
-                <img alt="logo of a plant and a bee" src={Logo} style={{ height: "120px", margin: "20px" }} />
+                <img alt="Website logo: a plant and a bee in a hexagon outline" src={Logo} style={{ height: "90px", margin: "20px", marginTop: '10px', marginBottom: '10px' }} />
 
                 <div className={classes.linkContainer}>
                     <NavLink className={classes.styledLink} exact activeClassName={classes.styledLinkActive} to='/gallery'>GALLERY</NavLink>

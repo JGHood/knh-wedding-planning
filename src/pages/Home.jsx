@@ -1,8 +1,8 @@
 import HomeCarousel from '../components/HomePage/HomeCarousel';
 import OurServices from '../components/HomePage/OurServices';
 import HomeBanner from '../components/HomePage/HomeBanner';
+import MeetKristenBanner from '../components/HomePage/MeetKristenBanner';
 import Button from '@material-ui/core/Button';
-
 
 export default function Home() {
     return (
@@ -14,6 +14,7 @@ export default function Home() {
             />
             <HomeBanner />
             <OurServices/>
+            <MeetKristenBanner />
         </div>
     )
 }

@@ -27,27 +27,31 @@ let theme = createMuiTheme({
     h1: {
       fontSize: '2rem',
       '@media (min-width:768px)': {
-        fontSize: "2rem",
+        fontSize: "3rem",
       },
       '@media (min-width:1300px)': {
         fontSize: "4rem"
       },
     },
     h2: {
-      fontSize: '2rem',
+      fontSize: '1.5rem',
       '@media (min-width:768px)': {
-        fontSize: "2.5rem",
+        fontSize: "2rem",
       },
       '@media (min-width:1300px)': {
         fontSize: "3rem"
       },
     },
+    h3: {
+      fontSize: '16px',
+      '@media (min-width:768px)': {
+        fontSize: '21px',
+      },
+      '@media (min-width:1300px)': {
+        fontSize: "24px"
+      },
+    },
     h4: {
-      fontFamily:
-        [
-          'Cinzel',
-          'cursive',
-        ].join(','),
       fontSize: '1.5rem',
       '@media (min-width:768px)': {
         fontSize: "2rem",
@@ -57,11 +61,6 @@ let theme = createMuiTheme({
       },
     },
     h5: {
-      fontFamily:
-      [
-        'Cinzel',
-        'cursive',
-      ].join(','),
     fontSize: '1rem',
     '@media (min-width:768px)': {
       fontSize: "1.5rem",
@@ -69,14 +68,23 @@ let theme = createMuiTheme({
     '@media (min-width:1300px)': {
       fontSize: "2rem"
     },
-    }
+    },
+    button: {
+      fontSize: '16px',
+      '@media (min-width:768px)': {
+        fontSize: "16px",
+      },
+      '@media (min-width:1300px)': {
+        fontSize: "24px"
+      },
+    },
   },
   palette: {
     primary: {
       main: "#344F1F",
     },
     secondary: {
-      main: "#EEBA2B",
+      main: "#d0bb54",
     },
     background: {
       default: "#EFEEE9",
