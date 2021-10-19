@@ -1,5 +1,6 @@
+import { useState } from 'react';
 import { makeStyles } from '@material-ui/core';
-import { NavLink } from 'react-router-dom';
+import { NavLink, Redirect } from 'react-router-dom';
 
 const useStyles = makeStyles((theme) => ({
   hex: {
@@ -47,20 +48,31 @@ const useStyles = makeStyles((theme) => ({
     fontSize: (props) => (props.size * 0.085 >= 12.5 ? props.size * 0.085 : 12.5),
     fontFamily: 'serif',
     width: '85%',
-    lineHeight: '13px',
+    lineHeight: '16px',
+    letterSpacing: '1px',
     marginTop: '6px',
     color: '#efeee9',
     textAlign: 'center',
     position: 'relative',
     top: (props) => -props.size / 5,
+    [theme.breakpoints.up('xs')]: {
+      lineHeight: (props) => 0.85 + props.size*0.002,
+      letterSpacing: (props) => 0.8 + props.size*0.005,
+      marginTop: '6px',
+    },
     [theme.breakpoints.up('sm')]: {
-      lineHeight: (props) => 1.5 - props.size*0.001,
-      letterSpacing: '0.8px',
+      lineHeight: (props) => 0.82 + props.size*0.002,
+      letterSpacing: (props) => 0.7 + props.size*0.005,
+      marginTop: '10px',
+    },
+    [theme.breakpoints.up('md')]: {
+      lineHeight: (props) => 1.2 + props.size*0.002,
+      letterSpacing: (props) => 1.2 + props.size*0.004,
       marginTop: '16px',
     },
   },
   readMore: {
-    fontSize: (props) => props.size * 0.08,
+    fontSize: (props) => (props.size * 0.08 >= 12.5 ? props.size * 0.08 : 12.5),
     lineHeight: (props) => 1.4 - props.size*0.001,
     fontFamily: 'Cinzel',
     color: theme.palette.secondary.main,
@@ -73,6 +85,46 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Hexagon(props) {
   const classes = useStyles(props);
+  console.log(2.5 - props.size*0.005);
+  const [redirect, setRedirect] = useState(false);
+  if (redirect) {
+    return <Redirect push to={props.link}/>
+  }
+  if (props.link) {
+    return (
+      <div className={classes.hex}>
+        <div 
+          className={classes.hexTop} 
+          onClick={() => setRedirect(true)}
+          role="link"
+          onKeyDown={() => setRedirect(true)}
+          tabIndex={0}
+        />
+        <div 
+          className={classes.hexBody}
+          onClick={() => setRedirect(true)}
+          role="link"
+          onKeyDown={() => setRedirect(true)}
+          tabIndex={0}
+        >
+          <div className={classes.header}>
+            {props.header}
+          </div>
+          <div className={classes.body}>
+            {props.body}
+          </div>
+          {props.link && <NavLink alt="Read More About Plan" className={classes.readMore} exact to={props.link}>View Plan →</NavLink>}
+        </div>
+        <div 
+          className={classes.hexBottom}
+          onClick={() => setRedirect(true)}
+          role="link"
+          onKeyDown={() => setRedirect(true)}
+          tabIndex={0}
+        />
+      </div>
+    );
+  }
   return (
       <div className={classes.hex}>
         <div className={classes.hexTop} />
@@ -83,10 +135,10 @@ export default function Hexagon(props) {
           <div className={classes.body}>
             {props.body}
           </div>
-          {props.link && <NavLink alt="Read More About Month-Of" className={classes.readMore} exact to={props.link}>View Full Plan</NavLink>}
+          {props.link && <NavLink alt="Read More About Plan" className={classes.readMore} exact to={props.link}>View Plan →</NavLink>}
         </div>
         <div className={classes.hexBottom}>
         </div>
       </div>
-  )
+  );
 }

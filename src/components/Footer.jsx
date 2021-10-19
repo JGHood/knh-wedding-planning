@@ -58,7 +58,7 @@ export default function Footer() {
                 <a className={classes.styledLink} aria-label="Link to Facebook Page" rel="noreferrer" href="https://www.facebook.com" target="_blank"><FacebookIcon fontSize="large" className={classes.socialMediaIcons} /></a>
                 <a className={classes.styledLink} aria-label="Link to Instagram Page" rel="noreferrer" href="https://www.instagram.com" target="_blank"><InstagramIcon fontSize="large" className={classes.socialMediaIcons} /></a>
             </div>
-            <GBWButton type="outline" to="/contact">Book a free meet + greet!</GBWButton>
+            <GBWButton variety="outline" to="/contact">Book a free meet + greet!</GBWButton>
             <Typography className={classes.copyright}>© 2021 Green Bee Weddings</Typography>
         </div>
     )

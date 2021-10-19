@@ -36,15 +36,25 @@ export default function ServicesTable() {
         },
         tableTitle: {
             marginTop: theme.typography.fontSize * 2.5,
+            fontFamily: ['Cinzel', 'serif'],
         },
         flexContainer: {
             display: "flex",
             justifyContent: "center"
         },
         styledTableHeader: {
-            backgroundColor: theme.palette.primary.main,
-            color: theme.palette.common.white,
+            backgroundColor: theme.palette.secondary.main,
+            color: theme.palette.common.gray,
             textAlign: 'center',
+            margin: 0,
+            [theme.breakpoints.down('xs')]: {
+                maxWidth: '90px',
+                fontSize: '13px',
+              },
+        },
+        styledTableHeaderServices: {
+            backgroundColor: theme.palette.secondary.main,
+            color: theme.palette.common.gray,
             margin: 0,
             [theme.breakpoints.down('xs')]: {
                 maxWidth: '90px',
@@ -96,28 +106,30 @@ export default function ServicesTable() {
 
     return (
         <>
-        <Typography className={classes.tableTitle} variant="h2">Compare Plans</Typography>
+        <Typography id="compare" className={classes.tableTitle} variant="h2">Compare Packages</Typography>
         {!tableScroll && <Typography variant="body1"><ArrowBackIosIcon fontSize="inherit" /> Swipe table to view all plan details <ArrowForwardIosIcon fontSize="inherit"/></Typography>}
         {!tableScroll && <Typography className={classes.rotate} variant="body1">(or, rotate your device)</Typography>}
             <TableContainer className={classes.tableContainer} component={Paper}>
                 <Table className={classes.table} size="small" aria-label="Table comparison of plans">
                     <TableHead>
                         <TableRow>
-                            <TableCell className={classes.styledTableHeader}>Services Included</TableCell>
-                            <TableCell className={classes.styledTableHeader} align="center">Day/Month Of Planning</TableCell>
-                            <TableCell className={classes.styledTableHeader} align="center">Full Planning</TableCell>
-                            <TableCell className={classes.styledTableHeader} align="center">Virtual Planning</TableCell>
+                            <TableCell className={classes.styledTableHeaderServices}><Typography variant="body1">Services Included</Typography></TableCell>
+                            <TableCell className={classes.styledTableHeader} align="center"><Typography variant="body1">Day/Month Of Planning</Typography></TableCell>
+                            <TableCell className={classes.styledTableHeader} align="center"><Typography variant="body1">Full Planning</Typography></TableCell>
+                            <TableCell className={classes.styledTableHeader} align="center"><Typography variant="body1">Virtual Planning</Typography></TableCell>
                         </TableRow>
                     </TableHead>
                     <TableBody>
                         {rows.map((row) => (
                             <TableRow className={classes.styledTableRow} key={row.label}>
                                 <TableCell className={classes.styledTableCell} component="main" scope="row">
-                                    {row.label}
+                                    <Typography variant="body1">
+                                        {row.label}
+                                    </Typography>
                                 </TableCell>
-                                <TableCell className={classes.styledTableCell} align="center">{row.DayOfPlan}</TableCell>
-                                <TableCell className={classes.styledTableCell} align="center">{row.MiddlePlan}</TableCell>
-                                <TableCell className={classes.styledTableCell} align="center">{row.FullServicePlan}</TableCell>
+                                <TableCell className={classes.styledTableCell} align="center"><Typography variant="body1">{row.DayOfPlan}</Typography></TableCell>
+                                <TableCell className={classes.styledTableCell} align="center"><Typography variant="body1">{row.MiddlePlan}</Typography></TableCell>
+                                <TableCell className={classes.styledTableCell} align="center"><Typography variant="body1">{row.FullServicePlan}</Typography></TableCell>
                             </TableRow>
                         ))}
                     </TableBody>

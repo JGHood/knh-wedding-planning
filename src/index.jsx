@@ -21,7 +21,6 @@ let theme = createMuiTheme({
     fontDisplay: 'optional',
     fontFamily: [
       'Montserrat',
-      'Roboto',
       'Helvetica',
       'sans-serif'
     ].join(','),
@@ -44,6 +43,7 @@ let theme = createMuiTheme({
       },
     },
     h3: {
+      fontFamily: 'Montserrat',
       fontSize: '16px',
       '@media (min-width:768px)': {
         fontSize: '21px',
@@ -79,13 +79,31 @@ let theme = createMuiTheme({
         fontSize: "24px"
       },
     },
+    body1: {
+      fontSize: '14px',
+      '@media (min-width:768px)': {
+        fontSize: "15px",
+      },
+      '@media (min-width:1300px)': {
+        fontSize: "16px"
+      },
+    },
+    body2: {
+      fontSize: '18px',
+      '@media (min-width:768px)': {
+        fontSize: "22px",
+      },
+      '@media (min-width:1300px)': {
+        fontSize: "26px"
+      },
+    }
   },
   palette: {
     primary: {
       main: "#344F1F",
     },
     secondary: {
-      main: "#d0bb54",
+      main: "#e4dbaf",
     },
     background: {
       default: "#EFEEE9",

@@ -71,9 +71,9 @@ export default function OurServices() {
         return (
             <div className="Our Services">
                 <div className={classes.buttonContainer}>
-                    <GBWButton type="solid">Book a free Meet + Greet!</GBWButton>
+                    <GBWButton variety="solid">Book a free meet + greet!</GBWButton>
                 </div>
-                <Typography variant="h1" className={classes.ourServicesHeader}>
+                <Typography variant="h2" className={classes.ourServicesHeader}>
                     Our Services
                 </Typography>
                 <div className={classes.hexRow}>
@@ -82,7 +82,7 @@ export default function OurServices() {
                     <Hexagon size={windowSize} color={'#344F1F'}
                         header="Full-Service Planning & Coordination"
                         body="We're with you every step of the way, from budget creation to your big day."
-                        link="/services"
+                        link="/services#plan2"
                     />
                     <Hexagon size={windowSize} color={'#e2d5a0'} />
                     <Hidden xsDown><Hexagon size={windowSize} color={'#e2d5a0'} /></Hidden>
@@ -92,19 +92,15 @@ export default function OurServices() {
                     <Hexagon size={windowSize} color={'#e2d5a0'} />
                     <Hexagon size={windowSize} color={'#344F1F'}
                         header="Month-Of Coordination"
-                        body="We do more than just ensure your big day goes as smoothly as possible—we 
-                        help with those final vendor decisions and make sure everyone is on the same page. 
-                        With us serving as the point of contact for your wedding day, that leaves you free
-                        to enjoy the celebrations!"
-                        link="/services"
+                        body="We do more than just ensure your big day goes as smoothly as possible--we 
+                        help with those final vendor decisions and make sure everyone is on the same page."
+                        link="/services#plan1"
                     />
                     <Hexagon size={windowSize} color={'#344F1F'}
                         header="Virtual Planning"
-                        body="For our couples on a tight budget, or those who 
-                        just need some help getting started. You'll gain access to custom timelines, spreadsheets, 
-                        and worksheets to get your planning process rolling, as well as monthly check-ins to answer
-                         all of your planning & coordination questions!"
-                        link="/services"
+                        body="For our couples on a budget, or those who just need some help getting started. 
+                        You'll gain access to custom documents, monthly check-ins, and much more!"
+                        link="/services#plan3"
                     />
                     <Hexagon size={windowSize} color={'#e2d5a0'} />
                     <Hidden xsDown><Hexagon size={windowSize} color={'#e2d5a0'} /></Hidden>
@@ -114,10 +110,9 @@ export default function OurServices() {
                     <Hexagon size={windowSize} color={'#e2d5a0'} />
                     <Hexagon size={windowSize} color={'#344F1F'}
                         header={<span>Add-Ons & <br /> A La Carte  </span>}
-                        body="These can be added on to any package or purchased a la carte. 
-                         Need help planning a bachelor/bachelorette party? Want someone to coordinate 
-                         your rehearsal dinner or a post-wedding brunch? We've got you covered!"
-                        link="/services"
+                        body="These can be added on to any package or purchased a la carte.
+                        Need an extra hand or another event planned? We've got you covered!"
+                        link="/services#plan4"
                     />
                     <Hexagon size={windowSize} color={'#e2d5a0'} />
                     <Hidden xsDown><Hexagon size={windowSize} color={'#e2d5a0'} /></Hidden>

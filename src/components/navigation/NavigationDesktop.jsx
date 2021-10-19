@@ -60,14 +60,12 @@ export default function NavigationDesktop() {
                 <div className={classes.linkContainer}>
                     <NavLink className={classes.styledLink} exact activeClassName={classes.styledLinkActive} to='/'>HOME</NavLink>
                     <NavLink className={classes.styledLink} exact activeClassName={classes.styledLinkActive} to='/services'>SERVICES</NavLink>
-                    <NavLink className={classes.styledLink} exact activeClassName={classes.styledLinkActive} to='/about'>ABOUT</NavLink>
                 </div>
 
                 <img alt="Website logo: a plant and a bee in a hexagon outline" src={Logo} style={{ height: "90px", margin: "20px", marginTop: '10px', marginBottom: '10px' }} />
 
                 <div className={classes.linkContainer}>
-                    <NavLink className={classes.styledLink} exact activeClassName={classes.styledLinkActive} to='/gallery'>GALLERY</NavLink>
-                    <NavLink className={classes.styledLink} exact activeClassName={classes.styledLinkActive} to='/blog'>BLOG</NavLink>
+                    <NavLink className={classes.styledLink} exact activeClassName={classes.styledLinkActive} to='/about'>ABOUT</NavLink>
                     <NavLink className={classes.styledLink} exact activeClassName={classes.styledLinkActive} to='/contact'>CONTACT</NavLink>
                     {/*{!isAuthenticated && <NavLink className={classes.styledLink} exact activeClassName={classes.styledLinkActive}  to='/signin'><Typography variant="p">SIGN IN</Typography></NavLink>}
                         {isAuthenticated && <NavLink className={classes.styledLink} onClick={() => {signOut(); window.location.reload()}} to="/"><Typography variant="p">SIGN OUT</Typography></NavLink>}*/}

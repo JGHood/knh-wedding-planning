@@ -60,6 +60,7 @@ const useStyles = makeStyles((theme) => ({
     marginLeft: '50px',
     lineHeight: '20px',
     textIndent: '50px',
+    letterSpacing: '1.7px',
     [theme.breakpoints.up('sm')]: {
       lineHeight: '28px',
       textIndent: '80px',

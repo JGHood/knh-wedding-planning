@@ -4,6 +4,7 @@ import { makeStyles, Typography } from '@material-ui/core';
 import Value from '../components/About/Value';
 import AboutUs from '../images/AboutUs.svg';
 import GBWButton from '../components/GBWButton';
+import QuoteBanner from '../components/About/QuoteBanner';
 
 const useStyles = makeStyles((theme) => ({
   header: {
@@ -51,7 +52,7 @@ export default function About() {
   return (
     <>
       <div className={classes.header}>
-        <img className={classes.headerLogo} alt="Header logo reading 'About Us'" src={AboutUs} />
+        <img className={classes.headerLogo} alt="About Us" src={AboutUs} />
       </div>
       <div className={classes.valuesContainer}>
         <Typography className={classes.valuesHeader} variant="h2"> Green Bee Values </Typography>
@@ -98,7 +99,9 @@ export default function About() {
         <GBWButton
           type="solid"
           to="/guide"
-        >Download your FREE Green <br /> Wedding Guide</GBWButton>
+        >Download your FREE Green <br /> Wedding Guide
+        </GBWButton>
+        <QuoteBanner />
       </div>
     </>
   )

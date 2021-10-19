@@ -15,8 +15,8 @@ const useStyles = makeStyles((theme) => ({
   },
   textContainer: {
     width: '100%',
-    backgroundColor: '#344F1F',
-    color: 'white',
+    backgroundColor: theme.palette.secondary.main,
+    color: theme.palette.primary.main,
     height: '250px',
     display: 'flex',
     justifyContent: 'center',
@@ -28,9 +28,6 @@ const useStyles = makeStyles((theme) => ({
     margin: 0,
     [theme.breakpoints.up('sm')]: {
       padding: '24px',
-      width: '48%',
-      minWidth: '48%',
-      marginLeft: '2%',
       height: '410px',
       fontSize: '20px',
     },
@@ -46,19 +43,8 @@ const useStyles = makeStyles((theme) => ({
     backgroundSize: 'cover',
     width: '100%',
     [theme.breakpoints.up('sm')]: {
-      marginRight: '2%',
       height: '410px',
-    },
-  },
-  meetKristen: {
-    marginTop: '0px',
-    position: 'relative',
-    top: '60px',
-    height: '55px',
-    width: '360px',
-    [theme.breakpoints.up('sm')]: {
-      height: '120px',
-      top: '40px',
+      width: '40%',
     },
   },
   text: {
@@ -83,7 +69,7 @@ const useStyles = makeStyles((theme) => ({
     textDecoration: 'none',
   }
 }));
-export default function MeetKristenBanner() {
+export default function QuoteBanner() {
   const classes = useStyles();
   return (
     <div className={classes.bannerContainer}>
@@ -91,11 +77,8 @@ export default function MeetKristenBanner() {
       </div>
       <div className={classes.textContainer}>
         <span className={classes.textBox}>
-        <img className={classes.meetKristen} alt="Meet Kristen" src={MeetKristen} />
           <Typography variant="body1" className={classes.text}>
-          Meet owner and lead planner of Green Bee Weddings, based out of Denver, Colorado. 
-          Kristen is passionate, talented, driven, and brings a smile to everything she does. 
-          With her background in environmental sociology and education ...
+          Text coming soon!
           </Typography>
           <div className={classes.readMore}>
           <Typography variant="body1"><NavLink className={classes.readMore} exact to="/about">Read More About Kristen →</NavLink></Typography>
