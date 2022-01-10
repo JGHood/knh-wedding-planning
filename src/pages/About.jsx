@@ -97,7 +97,7 @@ export default function About() {
           </Value>
         </div>
         <GBWButton
-          type="solid"
+          variety="solid"
           to="/guide"
         >Download your FREE Green <br /> Wedding Guide
         </GBWButton>

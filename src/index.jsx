@@ -11,7 +11,7 @@ let theme = createMuiTheme({
   breakpoints: {
     values: {
       xs: 0,
-      sm: 768,
+      sm: 767,
       md: 960,
       lg: 1280,
       xl: 1920,
@@ -34,6 +34,7 @@ let theme = createMuiTheme({
       },
     },
     h2: {
+      fontFamily: 'Montserrat',
       fontSize: '1.5rem',
       '@media (min-width:768px)': {
         fontSize: "2rem",
@@ -100,10 +101,16 @@ let theme = createMuiTheme({
   },
   palette: {
     primary: {
-      main: "#344F1F",
+      main: "#93a683",
     },
     secondary: {
-      main: "#e4dbaf",
+      main: "#decf8d",
+    },
+    tertiary: {
+      main: "#e49b7f",
+    },
+    quaternary: {
+      main: "#efe7c6",
     },
     background: {
       default: "#EFEEE9",

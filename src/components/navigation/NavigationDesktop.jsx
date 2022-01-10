@@ -61,8 +61,9 @@ export default function NavigationDesktop() {
                     <NavLink className={classes.styledLink} exact activeClassName={classes.styledLinkActive} to='/'>HOME</NavLink>
                     <NavLink className={classes.styledLink} exact activeClassName={classes.styledLinkActive} to='/services'>SERVICES</NavLink>
                 </div>
-
-                <img alt="Website logo: a plant and a bee in a hexagon outline" src={Logo} style={{ height: "90px", margin: "20px", marginTop: '10px', marginBottom: '10px' }} />
+                <NavLink to='/'>
+                    <img alt="Website logo: a plant and a bee in a hexagon outline" src={Logo} style={{ height: "90px", margin: "20px", marginTop: '10px', marginBottom: '10px' }} />
+                </NavLink>
 
                 <div className={classes.linkContainer}>
                     <NavLink className={classes.styledLink} exact activeClassName={classes.styledLinkActive} to='/about'>ABOUT</NavLink>

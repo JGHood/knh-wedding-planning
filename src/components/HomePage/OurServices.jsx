@@ -1,6 +1,6 @@
 
 import { useState, useEffect } from 'react';
-import { Hidden, Typography, useMediaQuery } from '@material-ui/core';
+import { Hidden, Typography, useMediaQuery, useTheme } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import Hexagon from '../Hexagon';
 import GBWButton from '../GBWButton';
@@ -9,7 +9,7 @@ const useStyles = makeStyles({
     hexRow: {
         display: 'flex',
         flexDirection: 'row',
-        overflow: 'hidden',
+        overflow: 'hidden', 
         justifyContent: 'center',
         marginBottom: (windowSize) => -windowSize * 0.51,
     },
@@ -33,8 +33,12 @@ const useStyles = makeStyles({
         flexDirection: 'column',
         margin: '32px',
     },
+    guideBtn: {
+        maxWidth: '95%',
+    },
 });
 export default function OurServices() {
+    const theme = useTheme();
     const isDesktop = useMediaQuery('(min-width:768px)');
     const [windowSize, setWindowSize] = useState(0);
     function debounce(fn, ms) {
@@ -71,54 +75,48 @@ export default function OurServices() {
         return (
             <div className="Our Services">
                 <div className={classes.buttonContainer}>
-                    <GBWButton variety="solid">Book a free meet + greet!</GBWButton>
+                    <GBWButton className={classes.guideBtn} to="/guide" variety="solid">Download your FREE Green Wedding Guide</GBWButton>
                 </div>
                 <Typography variant="h2" className={classes.ourServicesHeader}>
                     Our Services
                 </Typography>
                 <div className={classes.hexRow}>
-                    <Hidden xsDown><Hexagon size={windowSize} color={'#e2d5a0'} /></Hidden>
-                    <Hexagon size={windowSize} color={'#e2d5a0'} />
-                    <Hexagon size={windowSize} color={'#344F1F'}
-                        header="Full-Service Planning & Coordination"
-                        body="We're with you every step of the way, from budget creation to your big day."
-                        link="/services#plan2"
+                    <Hexagon size={windowSize} color={theme.palette.quaternary.main} />
+                    <Hexagon size={windowSize} color={theme.palette.quaternary.main} />
+                    <Hexagon size={windowSize} color={theme.palette.primary.main}
+                        ourServices
+                        text="white"
+                        header="Our Services"
+                        body="We've assembled three different packages to serve every budget and need when it comes to your wedding. We recommend booking as early as possible to get the most use out of our resources, expertise, and advice."
                     />
-                    <Hexagon size={windowSize} color={'#e2d5a0'} />
-                    <Hidden xsDown><Hexagon size={windowSize} color={'#e2d5a0'} /></Hidden>
+                    <Hexagon size={windowSize} color={theme.palette.quaternary.main} />
+                    <Hexagon size={windowSize} color={theme.palette.quaternary.main} />
                 </div>
                 <div className={classes.hexRow}>
-                    <Hidden xsDown><Hexagon size={windowSize} color={'#e2d5a0'} /></Hidden>
-                    <Hexagon size={windowSize} color={'#e2d5a0'} />
-                    <Hexagon size={windowSize} color={'#344F1F'}
+                    <Hexagon size={windowSize} color={theme.palette.quaternary.main} />
+                    <Hexagon size={windowSize} color={theme.palette.secondary.main}
                         header="Month-Of Coordination"
                         body="We do more than just ensure your big day goes as smoothly as possible--we 
                         help with those final vendor decisions and make sure everyone is on the same page."
                         link="/services#plan1"
                     />
-                    <Hexagon size={windowSize} color={'#344F1F'}
-                        header="Virtual Planning"
-                        body="For our couples on a budget, or those who just need some help getting started. 
-                        You'll gain access to custom documents, monthly check-ins, and much more!"
-                        link="/services#plan3"
+                    <Hexagon size={windowSize} color={theme.palette.secondary.main}
+                        header="Planning & Coordination"
+                        body="We're with you every step of the way, from budget creation to vendor management, to coordinating your big day."
+                        link="/services#plan2"
                     />
-                    <Hexagon size={windowSize} color={'#e2d5a0'} />
-                    <Hidden xsDown><Hexagon size={windowSize} color={'#e2d5a0'} /></Hidden>
+                    <Hexagon size={windowSize} color={theme.palette.quaternary.main} />
                 </div>
                 <div className={classes.hexRow}>
-                    <Hidden xsDown><Hexagon size={windowSize} color={'#e2d5a0'} /></Hidden>
-                    <Hexagon size={windowSize} color={'#e2d5a0'} />
-                    <Hexagon size={windowSize} color={'#344F1F'}
-                        header={<span>Add-Ons & <br /> A La Carte  </span>}
-                        body="These can be added on to any package or purchased a la carte.
-                        Need an extra hand or another event planned? We've got you covered!"
-                        link="/services#plan4"
+                    <Hexagon size={windowSize} color={theme.palette.quaternary.main} />
+                    <Hexagon size={windowSize} color={theme.palette.quaternary.main} />
+                    <Hexagon size={windowSize} color={theme.palette.secondary.main}
+                        header="Virtual Planning"
+                        body="For our couples on a budget, or those who just need some help getting started. You'll gain access to custom documents, monthly check-ins, and much more!"
+                        link="/services#plan3"
                     />
-                    <Hexagon size={windowSize} color={'#e2d5a0'} />
-                    <Hidden xsDown><Hexagon size={windowSize} color={'#e2d5a0'} /></Hidden>
-                </div>
-                <div className={classes.downloadButtonContainer}>
-                    <GBWButton className={classes.squishBtn} type="solid">Download your FREE Green Wedding Guide!</GBWButton>
+                    <Hexagon size={windowSize} color={theme.palette.quaternary.main} />
+                    <Hexagon size={windowSize} color={theme.palette.quaternary.main} />
                 </div>
             </div>
         )

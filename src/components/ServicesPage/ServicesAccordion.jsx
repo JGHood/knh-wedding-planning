@@ -17,22 +17,22 @@ export default function SimpleAccordion() {
         if (window.location.hash === "#plan1") {
             setPlan1(true);
             const plan1 = document.getElementById('plan1');
-            window.scroll({top: plan1.offsetTop, behavior: 'smooth'});
+            window.scroll({ top: plan1.offsetTop, behavior: 'smooth' });
         }
         if (window.location.hash === "#plan2") {
             setPlan2(true);
             const plan2 = document.getElementById('plan2');
-            window.scroll({top: plan2.offsetTop, behavior: 'smooth'});
+            window.scroll({ top: plan2.offsetTop, behavior: 'smooth' });
         }
         if (window.location.hash === "#plan3") {
             setPlan3(true);
             const plan3 = document.getElementById('plan3');
-            window.scroll({top: plan3.offsetTop, behavior: 'smooth'});
+            window.scroll({ top: plan3.offsetTop, behavior: 'smooth' });
         }
         if (window.location.hash === "#plan4") {
             setPlan4(true);
             const plan4 = document.getElementById('plan4');
-            window.scroll({top: plan4.offsetTop, behavior: 'smooth'});
+            window.scroll({ top: plan4.offsetTop, behavior: 'smooth' });
         }
     }, []);
     const isDesktop = useMediaQuery('(min-width:768px)');
@@ -99,30 +99,32 @@ export default function SimpleAccordion() {
                 </AccordionSummary>
                 <AccordionDetails className={classes.details}>
                     <div>
-                    <Typography>
-                        <div>
-                        <ul>
-                            <li>Up to 2 in-person or virtual coordination meetings</li>
-                            <li>Unlimited emails starting 60 days before your wedding day</li>
-                            <li>Venue walkthrough</li>
-                            <li>Custom budget & payment spreadsheet tracker</li>
-                            <li>Seating and reception diagrams</li>
-                            <li>Music selection assistance</li>
-                            <li>Detailed day-of timeline for wedding party, family, and vendors</li>
-                            <li>Final vendor confirmation and coordination</li>
-                            <li>Wedding rehearsal coordination (one hour)</li>
-                            <li>Setup support <em>(substantial DIY decor may be subject to additional fees)</em></li>
-                            <li>Up to 8 hours of day-of coordination
+                        <Typography>
+                            <div>
                                 <ul>
-                                    <li>Single point of contact for the day of your wedding</li>
-                                    <li>Ceremony and event coordination (e.g. grand entrance, cake cutting, etc.)</li>
-                                </ul>
-                            </li>
+                                    <li>Up to 2 in-person or virtual coordination meetings</li>
+                                    <li>Unlimited emails starting 60 days before your wedding day</li>
+                                    <li>Venue walkthrough</li>
+                                    <li>Custom budget & payment spreadsheet tracker</li>
+                                    <li>Seating and reception diagrams</li>
+                                    <li>Music selection assistance</li>
+                                    <li>Detailed day-of timeline for wedding party, family, and vendors</li>
+                                    <li>Final vendor confirmation and coordination</li>
+                                    <li>Wedding rehearsal coordination (one hour)</li>
+                                    <li>Setup support*</li>
+                                    <li>Up to 8 hours of day-of coordination
 
-                        </ul>
-                        <em>Mileage & hotel accommodations may apply to meetings and events over 30 miles from Denver</em>
-                        </div>
-                    </Typography>
+                                        <ul>
+                                            <li>Single point of contact for the day of your wedding</li>
+                                            <li>Ceremony and event coordination (e.g. grand entrance, cake cutting, etc.)</li>
+                                        </ul>
+                                    </li>
+
+                                </ul>
+                                <em>Mileage & hotel accommodations may apply to meetings and events over 30 miles from Denver</em><br />
+                                <em>*substantial DIY decor may be subject to additional fees</em>
+                            </div>
+                        </Typography>
                     </div>
                     <div className={classes.packageBottom}>
                         <div className={classes.priceLabel}>
@@ -145,38 +147,41 @@ export default function SimpleAccordion() {
                 </AccordionSummary>
                 <AccordionDetails className={classes.details}>
                     <div>
-                    <Typography>
-                        <ul>
-                            <li>Up to 8 in-person or virtual coordination meetings</li>
-                            <li>Unlimited emails, calls, and texts</li>
-                            <li>Weekly planning check-ins</li>
-                            <li>Vendor recommendations</li>
-                            <li>Custom budget & payment spreadsheet tracker</li>
-                            <li>Custom month-by-month checklist</li>
-                            <li>Custom mood boards to help ensure we and all vendors are on the same page</li>
-                            <li>Invitation and website design advice</li>
-                            <li>Hotel block and transportation logistics</li>
-                            <li>Venue and vendor assistance and management (contracts, meetings, etc.; I serve as primary contact)</li>
-                            <li>Attend site visits, tastings, vendor meetings, etc. as desired</li>
-                            <li>Paper goods design</li>
-                            <li>Wedding website building</li>
-                            <li>Venue walkthrough (about 30 days before)</li>
-                            <li>Seating and reception diagrams</li>
-                            <li>Music selection assistance</li>
-                            <li>Detailed day-of timeline for wedding party, family, and vendors</li>
-                            <li>Final vendor confirmation and coordination</li>
-                            <li>Wedding rehearsal coordination (one hour)</li>
-                            <li>Setup support <em>(substantial DIY decor may be subject to additional fees)</em></li>
-                            <li>Up to 12 hours of day-of coordination
-                                <ul>
-                                    <li>Single point of contact for the day of your wedding</li>
-                                    <li>Ceremony and event coordination (e.g. grand entrance, cake cutting, etc.)</li>
-                                    <li>Emergency kit</li>
-                                </ul>
-                            </li>
-                        </ul>
-                        <em>Mileage & hotel accommodations may apply to meetings and events over 30 miles from Denver</em>
-                    </Typography>
+                        <Typography>
+                            <ul>
+                                <li>Up to 8 in-person or virtual coordination meetings</li>
+                                <li>Unlimited emails</li>
+                                <li>Weekly planning check-ins</li>
+                                <li>Vendor recommendations</li>
+                                <li>Custom budget & payment spreadsheet tracker</li>
+                                <li>Custom month-by-month checklist</li>
+                                <li>Guidance establishing a vision and selecting aesthetic details, including custom mood boards</li>
+                                <li>Invitation and website design advice</li>
+                                <li>Assist with lodging and transportation logistics</li>
+                                <li>Venue & vendor selection and contract negotiation</li>
+                                <li>Attend site visits, tastings, vendor meetings, etc. as desired</li>
+                                <li>Assistance with save-the-date, invitation, and signage selection and production</li>
+                                <li>Wedding website building</li>
+                                <li>Venue walkthrough (about 30 days before)</li>
+                                <li>Seating and reception diagrams</li>
+                                <li>Music selection assistance</li>
+                                <li>Suggest, coordinate, assemble wedding party gifts, welcome bags and favors</li>
+                                <li>Detailed timeline for wedding party, family, and vendors</li>
+                                <li>Final vendor confirmation and coordination</li>
+                                <li>Wedding rehearsal coordination (one hour)</li>
+                                <li>Setup [and breakdown?] support*</li>
+                                <li>Up to 8 hours of day-of coordination
+
+                                    <ul>
+                                        <li>Single point of contact for the day of your wedding</li>
+                                        <li>Ceremony and event coordination (e.g. grand entrance, cake cutting, etc.)</li>
+                                        <li>Emergency kit</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                            <em>Mileage & hotel accommodations may apply to meetings and events over 30 miles from Denver</em><br />
+                            <em>*substantial DIY decor may be subject to additional fees</em>
+                        </Typography>
                     </div>
                     <div className={classes.packageBottom}>
                         <div className={classes.priceLabel}>
@@ -227,16 +232,16 @@ export default function SimpleAccordion() {
                 </AccordionSummary>
                 <AccordionDetails className={classes.details}>
                     <div>
-                    <Typography variant="body1">
-                        <ul>
-                            <li>Extra hours day-of</li>
-                            <li>Rehearsal dinner coordination</li>
-                            <li>Day after brunch coordination</li>
-                            <li>Bridal/Wedding shower coordination</li>
-                            <li>Bachelor/Bachelorette party planning</li>
-                        </ul>
-                        <em>Contact us for a quote on your a la carte package!</em>
-                    </Typography>
+                        <Typography variant="body1">
+                            <ul>
+                                <li>Extra hours day-of</li>
+                                <li>Rehearsal dinner coordination</li>
+                                <li>Day after brunch coordination</li>
+                                <li>Bridal/Wedding shower coordination</li>
+                                <li>Bachelor/Bachelorette party planning</li>
+                            </ul>
+                            <em>Contact us for a quote on your a la carte package!</em>
+                        </Typography>
                     </div>
                 </AccordionDetails>
             </Accordion>

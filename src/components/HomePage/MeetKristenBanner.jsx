@@ -3,7 +3,7 @@ import MeetKristen from '../../images/MeetKristen.svg';
 import { NavLink } from 'react-router-dom';
 import { Typography } from '@material-ui/core';
 
-var ArborL = "https://firebasestorage.googleapis.com/v0/b/knh-wedding-planning.appspot.com/o/carousel-images%2FArbor%2FArbor-L.jpg?alt=media&token=9d56a145-c5c5-436a-b7df-e6077605aa56";
+var KristenHeadshot = "https://firebasestorage.googleapis.com/v0/b/knh-wedding-planning.appspot.com/o/carousel-images%2FKristenHeadshot.webp?alt=media&token=74f6224d-2e86-4cd6-b685-42b4f19fecce";
 const useStyles = makeStyles((theme) => ({
   bannerContainer: {
     marginTop: '40px',
@@ -42,7 +42,7 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     padding: '24px',
     alignItems: 'center',
-    background: `url(${ArborL}) no-repeat center center`,
+    background: `url(${KristenHeadshot}) no-repeat center center`,
     backgroundSize: 'cover',
     width: '100%',
     [theme.breakpoints.up('sm')]: {
@@ -56,8 +56,10 @@ const useStyles = makeStyles((theme) => ({
     top: '60px',
     height: '55px',
     width: '360px',
+    left: '-80px',
     [theme.breakpoints.up('sm')]: {
-      height: '120px',
+      left: '-30px',
+      height: '80px',
       top: '40px',
     },
   },

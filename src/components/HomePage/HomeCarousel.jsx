@@ -1,14 +1,14 @@
-import { Carousel } from 'react-responsive-carousel';
+//import { Carousel } from 'react-responsive-carousel';
 import { NavLink } from 'react-router-dom';
 import { Typography, Grid, Button, useMediaQuery } from '@material-ui/core';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import makeStyles from '@material-ui/core/styles/makeStyles';
-var ArborL = "https://firebasestorage.googleapis.com/v0/b/knh-wedding-planning.appspot.com/o/carousel-images%2FArbor%2FArbor-L.jpg?alt=media&token=9d56a145-c5c5-436a-b7df-e6077605aa56";
+var TableSet = "https://firebasestorage.googleapis.com/v0/b/knh-wedding-planning.appspot.com/o/carousel-images%2FTableSet.webp?alt=media&token=dae9d535-6fd2-4531-bbda-6f323bb02760";
 
 export default function HomeCarousel(props) {
     const isDesktop = useMediaQuery('(min-width:768px)');
 
-    const useStyles = makeStyles({
+    const useStyles = makeStyles((theme) => ({
         "@keyframes fadeIn1": {
             "0%": {
                 opacity: 0,
@@ -77,29 +77,28 @@ export default function HomeCarousel(props) {
             justifyContent: "center",
         },
         carouselImageContainer: {
-            maxHeight: isDesktop ? "60vh" : "30vh",
+            maxHeight: isDesktop ? "60vh" : "20vh",
             display: "flex",
             alignItems: "center",
             justifyContent: "center"
         },
         ct1: {
             animation: "$fadeIn1 0.5s ease-in-out",
-            fontFamily: "Cinzel",
             fontSize: '48px',
         },
         ct2: {
             animation: "$fadeIn2 1.0s ease-in-out",
-            fontFamily: "Cinzel",
             fontSize: '32px',
         },
         ct3: {
             animation: "$fadeIn3 1.5s ease-in-out",
-            fontFamily: "Cinzel",
             fontSize: '32px',
         },
         ct4: {
+            width: '80%',
             marginTop: "3rem",
             animation: "$fadeIn4 2.0s ease-in-out",
+            textTransform: 'uppercase',
         },
         carousel: {
 
@@ -110,17 +109,23 @@ export default function HomeCarousel(props) {
             opacity: 0.6
         },
         text: {
-            fontFamily: 'Cinzel',
+            textAlign: 'center',
         },
         img: {
-            background: `url(${ArborL}) no-repeat center center`,
+            background: `url(${TableSet}) no-repeat center center`,
             backgroundSize: 'cover',
-            backgroundAttachment: 'fixed',
             opacity: 0.6,
             minHeight: '500px',
             width: '100%',
+            [theme.breakpoints.down('sm')]: {
+                minHeight: '280px',
+                transform: 'translate3d(0,0,0)',
+            },
+            [theme.breakpoints.up('sm')]: {
+                backgroundAttachment: 'fixed',
+            }
         },
-    });
+    }));
     const classes = useStyles();
     return (
         <div className={classes.carouselContainer}>
@@ -131,10 +136,10 @@ export default function HomeCarousel(props) {
                 justify="space-evenly"
                 alignItems="center"
             >
-                <Grid item className={classes.ct1}><Typography className={classes.text} variant="h1">{props.ct1}</Typography></Grid>
+                <Grid item className={classes.ct1}><Typography className={classes.text} variant="h2">{props.ct1}</Typography></Grid>
                 <Grid item className={classes.ct2}><Typography className={classes.text} variant="h2">{props.ct2}</Typography></Grid>
                 <Grid item className={classes.ct3}><Typography className={classes.text} variant="h2">{props.ct3}</Typography></Grid>
-                {props.ct4 && <Grid item className={classes.ct4}><NavLink exact to='/services'><Button variant="outlined" color="secondary">{props.ct4}</Button></NavLink></Grid>}
+                {props.ct4 && <Grid item className={classes.ct4}><Typography className={classes.text} variant="h5">{props.ct4}</Typography></Grid>}
             </Grid>
 
             <div className={classes.img} />

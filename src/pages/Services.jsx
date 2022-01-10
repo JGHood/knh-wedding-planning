@@ -100,7 +100,6 @@ export default function Services() {
                         Scroll down for a comparison chart of all plans.
                     </Typography>
                 </div>
-                <GBWButton variety="green"> Book a free meet + greet! </GBWButton>
                 <ServicesAccordion />
                 <ServicesTable />
                 <div className={classes.difference}>

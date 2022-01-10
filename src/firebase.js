@@ -1,4 +1,5 @@
 import firebase from 'firebase/app';
+import { initializeAnalytics } from 'firebase/analytics';
 
 // Add the Firebase products that you want to use
 import 'firebase/firestore';
@@ -17,12 +18,12 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
-firebase.initializeApp(firebaseConfig);
 
 export const db = firebase.firestore();
-export const app = firebase.app();
+export const app = firebase.initializeApp(firebaseConfig);
 export const analytics = firebase.analytics();
 export const googleProvider = new firebase.auth.GoogleAuthProvider();
+initializeAnalytics(app);
 
 export const signOut = () => {
     app.auth().signOut().then(() => {

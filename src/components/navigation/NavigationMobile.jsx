@@ -57,8 +57,8 @@ export default function NavigationMobile() {
                         <NavLink className={classes.styledLink} onClick={toggleDrawer(false)} exact activeClassName={classes.styledLinkActive} to='/'><Typography variant="h2">HOME</Typography></NavLink>
                         <NavLink className={classes.styledLink} onClick={toggleDrawer(false)} exact activeClassName={classes.styledLinkActive} to='/services'><Typography variant="h2">SERVICES</Typography></NavLink>
                         <NavLink className={classes.styledLink} onClick={toggleDrawer(false)} exact activeClassName={classes.styledLinkActive} to='/about'><Typography variant="h2">ABOUT US</Typography></NavLink>
-                        <NavLink className={classes.styledLink} onClick={toggleDrawer(false)} exact activeClassName={classes.styledLinkActive} to='/gallery'><Typography variant="h2">GALLERY</Typography></NavLink>
-                        <NavLink className={classes.styledLink} onClick={toggleDrawer(false)} exact activeClassName={classes.styledLinkActive} to='/blog'><Typography variant="h2">BLOG</Typography></NavLink>
+                        {/*<NavLink className={classes.styledLink} onClick={toggleDrawer(false)} exact activeClassName={classes.styledLinkActive} to='/gallery'><Typography variant="h2">GALLERY</Typography></NavLink>*/}
+                        {/*<NavLink className={classes.styledLink} onClick={toggleDrawer(false)} exact activeClassName={classes.styledLinkActive} to='/blog'><Typography variant="h2">BLOG</Typography></NavLink>*/}
                         <NavLink className={classes.styledLink} onClick={toggleDrawer(false)} exact activeClassName={classes.styledLinkActive} to='/contact'><Typography variant="h2">CONTACT</Typography></NavLink>
                         {/*!isAuthenticated && <NavLink className={classes.styledLink} onClick={toggleDrawer(false)} exact activeClassName={classes.styledLinkActive} to='/signin'><Typography variant="body1">SIGN IN</Typography></NavLink>*/}
                         {/*isAuthenticated && <NavLink className={classes.styledLink} onClick={() => {signOut(); toggleDrawer(false); window.location.reload()}} activeClassName={classes.styledLinkActive} to="/"><Typography variant="p">SIGN OUT</Typography></NavLink>*/}
@@ -86,7 +86,11 @@ export default function NavigationMobile() {
                             justify= "center"
                         >
                             <Grid item xs={2}/>
-                            <Grid item container justify="center" xs={8}><img alt="Website logo: a plant and a bee in a hexagon outline"  src={Logo} style={{ height: "80px", margin: "10px" }} /></Grid>
+                            <Grid item container justify="center" xs={8}>
+                                <NavLink to="/">
+                                    <img alt="Website logo: a plant and a bee in a hexagon outline"  src={Logo} style={{ height: "80px", margin: "10px" }} />
+                                </NavLink>
+                                </Grid>
                             <Grid item xs={2} container justify="flex-end"  ><MenuIcon alt="Menu to open navigation" fontSize="large" color="secondary" onClick={toggleDrawer(true)}>Open</MenuIcon></Grid>
                         </Grid>
                     </Grid>

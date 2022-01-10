@@ -5,13 +5,38 @@ import GBWButton from '../components/GBWButton';
 import { send, init } from 'emailjs-com';
 init("user_KzoWS9nyZr2xxxlEgIWFa");
 
+const BouquetHeld = 'https://firebasestorage.googleapis.com/v0/b/knh-wedding-planning.appspot.com/o/carousel-images%2FBouquetHeld.webp?alt=media&token=ce3bc15b-81b9-4bf7-a922-dcdaff2bbd62';
 const useStyles = makeStyles((theme) => ({
   header: {
-    backgroundColor: theme.palette.secondary.main,
+    width: "auto",
+    zIndex: 1,
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    minHeight: '250px'
+  },
+  img: {
+    background: `url(${BouquetHeld}) no-repeat center center`,
+    opacity: 0.4,
+    minHeight: '250px',
+    width: '100%',
+    [theme.breakpoints.down('sm')]: {
+        minHeight: '280px',
+        transform: 'translate3d(0,0,0)',
+    },
+    [theme.breakpoints.up('sm')]: {
+      backgroundAttachment: 'fixed',
+      minHeight: '280px',
+  }
+},
+  headerText: {
+    position: "absolute",
+    zIndex: 2,
+    display: "flex",
+    flexDirection: 'column',
     alignItems: 'center',
-    justifyContent: 'center',
-    display: 'flex',
     textAlign: 'center',
+    color: theme.palette.primary.main
   },
   headerLogo: {
     height: '160px',
@@ -80,7 +105,7 @@ const useStyles = makeStyles((theme) => ({
   error: {
     color: 'red',
     marginTop: '10px',
-  }
+  },
 }));
 export default function ContactUs() {
   const classes = useStyles();
@@ -117,13 +142,13 @@ export default function ContactUs() {
       meetAndGreetToSend,
       'user_KzoWS9nyZr2xxxlEgIWFa',
     )
-    .then(() => {
-      setShowQuestion(false);
-      setShowThankYou(true);
-    })
-    .catch(() => {
-      setShowError(true);
-    });
+      .then(() => {
+        setShowQuestion(false);
+        setShowThankYou(true);
+      })
+      .catch(() => {
+        setShowError(true);
+      });
   }
   const questionSubmit = (e) => {
     e.preventDefault();
@@ -164,9 +189,13 @@ export default function ContactUs() {
   if (showThankYou) {
     return (
       <>
-        <div className={classes.header}>
-          Contact Us Header
+              <div className={classes.header}>
+        <div className={classes.headerText}>
+          <Typography variant="h2">Let's create your dream wedding together.</Typography>
+          <Typography variant="h3">Drop us a line for more information.</Typography>
         </div>
+        <div className={classes.img}/>
+      </div>
         <div className={classes.container}>
           <div className={classes.thanksContainer}>
             <Typography variant="h1">Thank You!</Typography>
@@ -180,7 +209,11 @@ export default function ContactUs() {
   return (
     <>
       <div className={classes.header}>
-        Contact Us
+        <div className={classes.headerText}>
+          <Typography variant="h2">Let's create your dream wedding together.</Typography>
+          <Typography variant="h3">Drop us a line for more information.</Typography>
+        </div>
+        <div className={classes.img}/>
       </div>
       <div className={classes.container}>
         <Typography variant="h2">How can we help?</Typography>

@@ -1,7 +1,8 @@
+import { Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
-import WeAre from '../../images/WeAre.svg';
+import GBWButton from '../GBWButton';
 
-var ArborL = "https://firebasestorage.googleapis.com/v0/b/knh-wedding-planning.appspot.com/o/carousel-images%2FArbor%2FArbor-L.jpg?alt=media&token=9d56a145-c5c5-436a-b7df-e6077605aa56";
+var CoupleBouquet = "https://firebasestorage.googleapis.com/v0/b/knh-wedding-planning.appspot.com/o/carousel-images%2FCoupleBouquet.webp?alt=media&token=897a55c7-9e05-4e87-a10b-b0191aec28d3";
 const useStyles = makeStyles((theme) => ({
   bannerContainer: {
     marginTop: '40px',
@@ -13,7 +14,7 @@ const useStyles = makeStyles((theme) => ({
   },
   textContainer: {
     width: '100%',
-    backgroundColor: '#344F1F',
+    backgroundColor: theme.palette.primary.main,
     color: 'white',
     height: '200px',
     display: 'flex',
@@ -21,12 +22,11 @@ const useStyles = makeStyles((theme) => ({
 
     padding: '24px',
     paddingRight: '48px',
-    paddingTop: '0',
+    paddingTop: '15px',
     margin: 0,
     [theme.breakpoints.up('sm')]: {
-      width: '48%',
-      minWidth: '48%',
-      marginRight: '2%',
+      width: '50%',
+      minWidth: '50%',
       height: '410px',
       fontSize: '20px',
     },
@@ -38,28 +38,27 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     padding: '24px',
     alignItems: 'center',
-    background: `url(${ArborL}) no-repeat center center`,
+    background: `url(${CoupleBouquet}) no-repeat center center`,
     backgroundSize: 'cover',
     width: '100%',
     [theme.breakpoints.up('sm')]: {
-      marginLeft: '2%',
       height: '410px',
     },
   },
   weAre: {
-    marginTop: '0px',
+    marginRight: '3px',
+    fontFamily: 'Smooch',
+    fontSize: '48px',
     position: 'relative',
-    top: '38px',
-    height: '80px',
+    top: '37px',
     [theme.breakpoints.up('sm')]: {
-      height: '100px',
-      top: '50px',
+      top: '45px',
     },
   },
   text: {
-    marginLeft: '50px',
+    marginLeft: '55px',
     lineHeight: '20px',
-    textIndent: '50px',
+    textIndent: '80px',
     letterSpacing: '1.7px',
     [theme.breakpoints.up('sm')]: {
       lineHeight: '28px',
@@ -72,6 +71,15 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.up('sm')]: {
     },
   },
+  learn: {
+    display: 'inline-block',
+    paddingTop: '10px',
+    paddingLeft: '55px',
+    [theme.breakpoints.up('sm')]: {
+      display: 'inline',
+      paddingLeft: '35px',
+    },
+  }
 }));
 export default function HomeBanner() {
   const classes = useStyles();
@@ -79,10 +87,14 @@ export default function HomeBanner() {
     <div className={classes.bannerContainer}>
       <div className={classes.textContainer}>
         <span className={classes.textBox}>
-          <img className={classes.weAre} alt="We are" src={WeAre} />
-          <div className={classes.text}>
+          <Typography className={classes.weAre}>
+            We are
+          </Typography>
+          <Typography variant="body1" className={classes.text}>
             dedicated to celebrating your unique love story while giving back to our community and planet through stress-free planning and coordination.
-          </div>
+            <GBWButton to="about" variant="body1" className={classes.learn} variety="black">Learn How</GBWButton>
+          </Typography>
+
         </span>
       </div>
       <div className={classes.imageContainer}>

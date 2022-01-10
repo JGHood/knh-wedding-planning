@@ -26,8 +26,8 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: theme.palette.secondary.main,
 
     '&:hover': {
-      backgroundColor: theme.palette.secondary.main,
-      borderColor: theme.palette.secondary.main,
+      backgroundColor: '#C0B273',
+      borderColor: '#C0B273',
     },
   },
   solidOutline: {
@@ -40,7 +40,7 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: theme.palette.secondary.main,
 
     '&:hover': {
-      backgroundColor: theme.palette.secondary.main,
+      backgroundColor: '#C0B273',
       borderColor: theme.palette.primary.main,
     },
   },
@@ -53,6 +53,22 @@ const useStyles = makeStyles((theme) => ({
     textTransform: 'none',
     letterSpacing: '4px',
     backgroundColor: theme.palette.primary.main,
+
+    '&:hover': {
+      backgroundColor: theme.palette.secondary.main,
+      borderColor: theme.palette.secondary.main,
+    },
+  },
+  black: {
+    color: theme.palette.common.white,
+    borderRadius: '0px',
+    letterSpacing: '0px',
+    backgroundColor: 'black',
+    fontSize: '14px',
+
+    [theme.breakpoints.up('sm')]: {
+      padding: '7px 35px',
+    },
 
     '&:hover': {
       backgroundColor: theme.palette.secondary.main,
@@ -108,6 +124,16 @@ export default function GBWButton(props) {
     }
     return (
       <Typography {...props}><Button type={props.type ? props.type : 'button'} className={classes.solidOutline}>{props.children}</Button></Typography>
+    )
+  }
+  if (props.variety === "black") {
+    if (props.to) {
+      return (
+        <Typography {...props} variant="body1"><Button type={props.type ? props.type : 'button'} className={classes.black}><NavLink className={classes.navLinkOutline} exact to={props.to}>{props.children}</NavLink></Button></Typography>
+      )
+    }
+    return (
+      <Typography {...props} variant="body1"><Button type={props.type ? props.type : 'button'} className={classes.black}>{props.children}</Button></Typography>
     )
   }
   return (

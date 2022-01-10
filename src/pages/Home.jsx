@@ -8,9 +8,10 @@ export default function Home() {
     return (
         <div>
             <HomeCarousel
-                ct1="GREEN BEE"
-                ct2="Sustainable Wedding Planning"
-                ct3="Denver, CO + Beyond"
+                ct1="Planning + Coordinating"
+                ct2="Beautiful Weddings for"
+                ct3="Eco-Friendly Couples"
+                ct4="Serving Denver, CO + oklahoma + beyond"
             />
             <HomeBanner />
             <OurServices/>
