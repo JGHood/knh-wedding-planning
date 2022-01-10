@@ -36,6 +36,11 @@ const useStyles = makeStyles({
     guideBtn: {
         maxWidth: '95%',
     },
+    ourServices: {
+        minHeight: '20px',
+        overflow: 'hidden',
+        marginBottom: '8000px',
+    }
 });
 export default function OurServices() {
     const theme = useTheme();
@@ -73,13 +78,7 @@ export default function OurServices() {
     const classes = useStyles(windowSize);
     if (windowSize > 1) {
         return (
-            <div className="Our Services">
-                <div className={classes.buttonContainer}>
-                    <GBWButton className={classes.guideBtn} to="/guide" variety="solid">Download your FREE Green Wedding Guide</GBWButton>
-                </div>
-                <Typography variant="h2" className={classes.ourServicesHeader}>
-                    Our Services
-                </Typography>
+            <div className="ourServices">
                 <div className={classes.hexRow}>
                     <Hexagon size={windowSize} color={theme.palette.quaternary.main} />
                     <Hexagon size={windowSize} color={theme.palette.quaternary.main} />

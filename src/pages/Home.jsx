@@ -2,7 +2,7 @@ import HomeCarousel from '../components/HomePage/HomeCarousel';
 import OurServices from '../components/HomePage/OurServices';
 import HomeBanner from '../components/HomePage/HomeBanner';
 import MeetKristenBanner from '../components/HomePage/MeetKristenBanner';
-import Button from '@material-ui/core/Button';
+import GreenerWedding from '../components/HomePage/GreenerWedding';
 
 export default function Home() {
     return (
@@ -14,6 +14,7 @@ export default function Home() {
                 ct4="Serving Denver, CO + oklahoma + beyond"
             />
             <HomeBanner />
+            <GreenerWedding />
             <OurServices/>
             <MeetKristenBanner />
         </div>

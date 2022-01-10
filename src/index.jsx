@@ -54,12 +54,12 @@ let theme = createMuiTheme({
       },
     },
     h4: {
-      fontSize: '1.5rem',
+      fontSize: '14px',
       '@media (min-width:768px)': {
-        fontSize: "2rem",
+        fontSize: "16px",
       },
       '@media (min-width:1300px)': {
-        fontSize: "2.5rem"
+        fontSize: "18px"
       },
     },
     h5: {
@@ -112,8 +112,8 @@ let theme = createMuiTheme({
     quaternary: {
       main: "#efe7c6",
     },
-    background: {
-      default: "#EFEEE9",
+    bg: {
+      main: "#EFEEE9",
     }
   },
 });
