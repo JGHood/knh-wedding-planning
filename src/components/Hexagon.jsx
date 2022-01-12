@@ -7,7 +7,7 @@ const useStyles = makeStyles((theme) => ({
     margin: (props) => props.size * 0.04,
     transition: '0.2s',
     '&:hover': {
-      transform: 'translateZ(0) scale(1.03)',
+      transform: (props) => props.link ? 'translateZ(0) scale(1.03)' : '',
     },
   },
   header: {

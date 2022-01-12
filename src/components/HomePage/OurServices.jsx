@@ -1,9 +1,8 @@
 
 import { useState, useEffect } from 'react';
-import { Hidden, Typography, useMediaQuery, useTheme } from '@material-ui/core';
+import { useMediaQuery, useTheme } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import Hexagon from '../Hexagon';
-import GBWButton from '../GBWButton';
 
 const useStyles = makeStyles({
     hexRow: {
@@ -37,9 +36,8 @@ const useStyles = makeStyles({
         maxWidth: '95%',
     },
     ourServices: {
-        minHeight: '20px',
+        paddingBottom: '200px',
         overflow: 'hidden',
-        marginBottom: '8000px',
     }
 });
 export default function OurServices() {
@@ -78,7 +76,7 @@ export default function OurServices() {
     const classes = useStyles(windowSize);
     if (windowSize > 1) {
         return (
-            <div className="ourServices">
+            <div className={classes.ourServices}>
                 <div className={classes.hexRow}>
                     <Hexagon size={windowSize} color={theme.palette.quaternary.main} />
                     <Hexagon size={windowSize} color={theme.palette.quaternary.main} />

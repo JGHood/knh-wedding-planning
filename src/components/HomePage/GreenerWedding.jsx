@@ -5,9 +5,9 @@ import GBWButton from '../GBWButton';
 var CoupleBouquet = "https://firebasestorage.googleapis.com/v0/b/knh-wedding-planning.appspot.com/o/carousel-images%2FCoupleBouquet.webp?alt=media&token=897a55c7-9e05-4e87-a10b-b0191aec28d3";
 const useStyles = makeStyles((theme) => ({
   bannerContainer: {
-    marginTop: '40px',
     width: '100%',
     display: 'flex',
+    marginBottom: '60px',
     [theme.breakpoints.down('xs')]: {
       flexWrap: 'wrap',
     },
@@ -16,16 +16,15 @@ const useStyles = makeStyles((theme) => ({
     width: '100%',
     backgroundColor: theme.palette.bg.main,
     alignItems: 'center',
-
+    
     padding: '24px',
-    paddingRight: '48px',
+    paddingBottom: 0,
     paddingTop: '15px',
     margin: 0,
     [theme.breakpoints.up('sm')]: {
       width: '60%',
       minWidth: '60%',
       height: '460px',
-      fontSize: '20px',
     },
   },
   imageContainer: {
@@ -38,7 +37,7 @@ const useStyles = makeStyles((theme) => ({
     backgroundSize: 'cover',
     width: '100%',
     [theme.breakpoints.up('sm')]: {
-      height: '460px',
+      minHeight: '460px',
     },
   },
   textBox: {
@@ -66,18 +65,38 @@ const useStyles = makeStyles((theme) => ({
     textAlign: 'center',
     textTransform: 'uppercase',
     width:'100%',
-    fontFamily: 'serif'
+    fontFamily: 'Cinzel'
   },
   greener: {
     color: theme.palette.primary.main
   },
   p: {
     paddingBottom: '10px',
+    letterSpacing: '1px',
+    lineHeight: '22px',
+  },
+  btnGroup: {
+    display: 'flex',
+    justifyContent: 'center',
+    marginTop: '20px',
+  },
+  btn: {
+    fontFamily: 'Cinzel !important',
+    marginRight: '20px',
+    width: '200px',
+    minHeight: '200px',
+  },
+  accent: {
+    minHeight: '20px',
+    backgroundColor: theme.palette.tertiary.main,
+    marginTop: '40px',
   }
 }));
 export default function GreenerWedding() {
   const classes = useStyles();
   return (
+    <>
+          <div className={classes.accent} />
     <div className={classes.bannerContainer}>
       <div className={classes.textContainer}>
         <span className={classes.textBox}>
@@ -97,14 +116,18 @@ export default function GreenerWedding() {
           <Typography variant="body1" className={classes.p}>
           In the meantime, grab your copy of the Green Wedding Guide down below!
           </Typography>
-
         </span>
+        <div className={classes.btnGroup}>
+          <GBWButton className={classes.btn} variety="green">Get In Touch</GBWButton>
+          <GBWButton className={classes.btn} variety="green">Green wedding Guide</GBWButton>
+        </div>
       </div>
       <div className={classes.imageContainer}>
       </div>
       <div>
       </div>
     </div>
+    </>
 
   )
 }

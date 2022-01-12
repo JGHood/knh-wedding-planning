@@ -129,7 +129,7 @@ export default function ContactUs() {
     email_addr: '',
     questions: '',
   });
-  const [showConnect, setShowConnect] = useState(false);
+  const [showConnect, setShowConnect] = useState(true);
   const [showQuestion, setShowQuestion] = useState(false);
   const [showThankYou, setShowThankYou] = useState(false);
   const [showError, setShowError] = useState(false);

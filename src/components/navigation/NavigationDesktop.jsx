@@ -50,11 +50,16 @@ export default function NavigationDesktop() {
             flexDirection: 'row',
             paddingTop: '15px',
             paddingBottom: '15px',
+        },
+        appBar: {
+            marginBottom: 0,
+            paddingBottom: 0,
+            backgroundColor: theme.palette.quinary.main,
         }
     });
     const classes = useStyles();
     return (
-        <AppBar position="static" style={{ marginBottom: 0, paddingBottom: 0 }}>
+        <AppBar position="static" className={classes.appBar}>
             <Toolbar style={{ marginBottom: 0, paddingBottom: 0 }}>
                 <div className={classes.headerContainer}>
                 <div className={classes.linkContainer}>

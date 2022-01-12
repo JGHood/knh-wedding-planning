@@ -112,6 +112,9 @@ let theme = createMuiTheme({
     quaternary: {
       main: "#efe7c6",
     },
+    quinary: {
+      main: '#4b6438',
+    },
     bg: {
       main: "#EFEEE9",
     }

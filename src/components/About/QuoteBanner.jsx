@@ -51,6 +51,8 @@ const useStyles = makeStyles((theme) => ({
     lineHeight: '20px',
     marginTop: '50px',
     paddingLeft: '24px',
+    fontFamily: 'Smooch',
+    color: 'black',
     [theme.breakpoints.up('sm')]: {
       lineHeight: '28px',
     },
@@ -77,8 +79,8 @@ export default function QuoteBanner() {
       </div>
       <div className={classes.textContainer}>
         <span className={classes.textBox}>
-          <Typography variant="body1" className={classes.text}>
-          Text coming soon!
+          <Typography variant="h2" className={classes.text}>
+          Congratulations on your Engagement! 
           </Typography>
           <div className={classes.readMore}>
           <Typography variant="body1"><NavLink className={classes.readMore} exact to="/about">Read More About Kristen →</NavLink></Typography>

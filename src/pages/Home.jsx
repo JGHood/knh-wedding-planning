@@ -3,6 +3,7 @@ import OurServices from '../components/HomePage/OurServices';
 import HomeBanner from '../components/HomePage/HomeBanner';
 import MeetKristenBanner from '../components/HomePage/MeetKristenBanner';
 import GreenerWedding from '../components/HomePage/GreenerWedding';
+import CongratsBanner from '../components/HomePage/CongratsBanner';
 
 export default function Home() {
     return (
@@ -14,9 +15,10 @@ export default function Home() {
                 ct4="Serving Denver, CO + oklahoma + beyond"
             />
             <HomeBanner />
+            <CongratsBanner />
             <GreenerWedding />
             <OurServices/>
-            <MeetKristenBanner />
+            {/*<MeetKristenBanner />*/}
         </div>
     )
 }

@@ -45,7 +45,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   green: {
-    borderRadius: '8px',
+    borderRadius: '0px',
     borderWidth: '4px',
     borderColor: theme.palette.primary.main,
     border: 'solid',

@@ -5,7 +5,6 @@ import { AppBar, Toolbar, Grid, Typography, Drawer } from '@material-ui/core';
 import { useTheme, makeStyles } from '@material-ui/core/styles';
 import Logo from '../../images/Logo.svg';
 import PinterestIcon from '@material-ui/icons/Pinterest';
-import TwitterIcon from '@material-ui/icons/Twitter';
 import InstagramIcon from '@material-ui/icons/Instagram';
 import FacebookIcon from '@material-ui/icons/Facebook';
 //import { AuthContext } from '../../Authentication';
@@ -26,21 +25,26 @@ export default function NavigationMobile() {
     const theme = useTheme();
     const useStyles = makeStyles({
     socialMediaIcons: {
-        color: theme.palette.primary.main,
+        color: theme.palette.quinary.main,
         marginRight: "0.5rem",
         "&:hover": {
-            color: theme.palette.secondary.main,
+            color: theme.palette.quaternary.main,
         },
     },
     styledLink: {
         textDecoration: "none",
-        color: theme.palette.primary.main,
+        color: theme.palette.quinary.main,
         marginTop: '8px',
         fontFamily: 'Cinzel',
     },
     styledLinkActive: {
-        color: theme.palette.secondary.main,
+        color: theme.palette.quaternary.main,
         fontWeight: "bold",
+    },
+    appBar: {
+        marginBottom: 0,
+        paddingBottom: 0,
+        backgroundColor: theme.palette.quinary.main,
     }
         });
     const classes = useStyles();
@@ -71,7 +75,7 @@ export default function NavigationMobile() {
                     </Grid>
                     </Grid>
             </Drawer>
-        <AppBar position="static" style={{marginBottom:0, paddingBottom:0}}>
+        <AppBar position="static" className={classes.appBar}>
             <Toolbar style={{marginBottom:0, paddingBottom:0}}>
                     <Grid
                         container
