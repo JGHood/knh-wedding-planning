@@ -16,7 +16,7 @@ function App() {
         <div style={{ height: "100%", width: "100%" }}>
           <Navigation/>
           <div
-          style={{margin: "0 auto;", minHeight: '60vh'}}
+          style={{margin: "0 auto", minHeight: '60vh'}}
           >
             {/*<Route exact path="/signup" component={SignUp} />*/}
             {/*<Route exact path="/signin" component={SignIn} /> */}

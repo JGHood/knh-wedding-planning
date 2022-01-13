@@ -9,6 +9,7 @@ import InstagramIcon from '@material-ui/icons/Instagram';
 import FacebookIcon from '@material-ui/icons/Facebook';
 //import { AuthContext } from '../../Authentication';
 import MenuIcon from '@material-ui/icons/Menu';
+import PhoneIcon from '@material-ui/icons/Phone';
 
 export default function NavigationMobile() {
 
@@ -45,6 +46,10 @@ export default function NavigationMobile() {
         marginBottom: 0,
         paddingBottom: 0,
         backgroundColor: theme.palette.quinary.main,
+    },
+    phone: {
+        marginLeft: '80px',
+        marginTop: '30px',
     }
         });
     const classes = useStyles();
@@ -95,7 +100,10 @@ export default function NavigationMobile() {
                                     <img alt="Website logo: a plant and a bee in a hexagon outline"  src={Logo} style={{ height: "80px", margin: "10px" }} />
                                 </NavLink>
                                 </Grid>
-                            <Grid item xs={2} container justify="flex-end"  ><MenuIcon alt="Menu to open navigation" fontSize="large" color="secondary" onClick={toggleDrawer(true)}>Open</MenuIcon></Grid>
+                            <Grid item xs={2} container justify="flex-end"  >
+                                <MenuIcon alt="Menu to open navigation" fontSize="large" color="secondary" onClick={toggleDrawer(true)}>Open</MenuIcon>
+                                <PhoneIcon className={classes.phone} alt="Call Green Bee" color="secondary" href="tel:720-725-2114"></PhoneIcon>
+                            </Grid>
                         </Grid>
                     </Grid>
             </Toolbar>

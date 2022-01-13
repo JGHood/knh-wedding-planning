@@ -113,13 +113,13 @@ export default function GreenerWedding() {
           <Typography variant="body1" className={classes.p}>
           You don't have to compromise your dream wedding for being eco-friendly and we're here to help. Check out our services below and drop us a line to chat more!
           </Typography>
-          <Typography variant="body1" className={classes.p}>
+          {/*<Typography variant="body1" className={classes.p}>
           In the meantime, grab your copy of the Green Wedding Guide down below!
-          </Typography>
+  </Typography>*/}
         </span>
         <div className={classes.btnGroup}>
-          <GBWButton className={classes.btn} variety="green">Get In Touch</GBWButton>
-          <GBWButton className={classes.btn} variety="green">Green wedding Guide</GBWButton>
+          <GBWButton to="/contact" className={classes.btn} variety="green">Get In Touch</GBWButton>
+          {/*<GBWButton className={classes.btn} variety="green">Green wedding Guide</GBWButton>*/}
         </div>
       </div>
       <div className={classes.imageContainer}>

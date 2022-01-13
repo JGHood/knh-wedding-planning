@@ -1,6 +1,7 @@
 //import { Carousel } from 'react-responsive-carousel';
 import { NavLink } from 'react-router-dom';
 import { Typography, Grid, Button, useMediaQuery } from '@material-ui/core';
+import GBWButton from '../GBWButton';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import makeStyles from '@material-ui/core/styles/makeStyles';
 var TableSet = "https://firebasestorage.googleapis.com/v0/b/knh-wedding-planning.appspot.com/o/carousel-images%2FTableSet.webp?alt=media&token=dae9d535-6fd2-4531-bbda-6f323bb02760";
@@ -125,6 +126,16 @@ export default function HomeCarousel(props) {
                 backgroundAttachment: 'fixed',
             }
         },
+        btn: {
+            color: 'white',
+            textAlign: 'center',
+            alignItems: 'center',
+            justifyContent: 'center',
+            width: '80%',
+            marginTop: "3rem",
+            animation: "$fadeIn4 2.0s ease-in-out",
+            textTransform: 'uppercase',
+        }
     }));
     const classes = useStyles();
     return (
@@ -140,6 +151,7 @@ export default function HomeCarousel(props) {
                 <Grid item className={classes.ct2}><Typography className={classes.text} variant="h2">{props.ct2}</Typography></Grid>
                 <Grid item className={classes.ct3}><Typography className={classes.text} variant="h2">{props.ct3}</Typography></Grid>
                 {props.ct4 && <Grid item className={classes.ct4}><Typography className={classes.text} variant="h5">{props.ct4}</Typography></Grid>}
+                <Grid item className={classes.btn}><GBWButton variety="outline" to="/services" className={classes.btn} variant="h2">View Our Plans</GBWButton></Grid>
             </Grid>
 
             <div className={classes.img} />

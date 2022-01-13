@@ -5,6 +5,7 @@ const useStyles = makeStyles((theme) => ({
   outline: {
     borderRadius: '8px',
     borderWidth: '4px',
+    color: 'white',
     borderColor: theme.palette.secondary.main,
     border: 'solid',
     textTransform: 'none',
@@ -46,7 +47,7 @@ const useStyles = makeStyles((theme) => ({
   },
   green: {
     borderRadius: '0px',
-    borderWidth: '4px',
+    borderWidth: '0px',
     borderColor: theme.palette.primary.main,
     border: 'solid',
     color: theme.palette.common.white,

@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { makeStyles, Typography, TextField, Checkbox, FormControlLabel, Select, MenuItem, InputLabel, FormControl } from '@material-ui/core';
 import GBWButton from '../components/GBWButton';
 import { send, init } from 'emailjs-com';
+import {Helmet} from "react-helmet";
 init("user_KzoWS9nyZr2xxxlEgIWFa");
 
 const BouquetHeld = 'https://firebasestorage.googleapis.com/v0/b/knh-wedding-planning.appspot.com/o/carousel-images%2FBouquetHeld.webp?alt=media&token=ce3bc15b-81b9-4bf7-a922-dcdaff2bbd62';
@@ -36,7 +37,6 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: 'column',
     alignItems: 'center',
     textAlign: 'center',
-    color: theme.palette.primary.main
   },
   headerLogo: {
     height: '160px',
@@ -189,7 +189,11 @@ export default function ContactUs() {
   if (showThankYou) {
     return (
       <>
-              <div className={classes.header}>
+      <Helmet>
+        <title>Green Bee Sustainable Weddings- Thanks for Contacting!</title>
+        <meta name="description" content="Contact our team of professional wedding planners to book your sustainable dream wedding today!" />
+      </Helmet>
+        <div className={classes.header}>
         <div className={classes.headerText}>
           <Typography variant="h2">Let's create your dream wedding together.</Typography>
           <Typography variant="h3">Drop us a line for more information.</Typography>
@@ -208,6 +212,10 @@ export default function ContactUs() {
   }
   return (
     <>
+      <Helmet>
+        <title>Green Bee Sustainable Weddings- Contact Us</title>
+        <meta name="description" content="Contact our team of professional wedding planners to book your sustainable dream wedding today!" />
+      </Helmet>
       <div className={classes.header}>
         <div className={classes.headerText}>
           <Typography variant="h2">Let's create your dream wedding together.</Typography>
@@ -219,8 +227,8 @@ export default function ContactUs() {
         <Typography variant="h2">How can we help?</Typography>
         <Typography variant="body1">Let's get in touch!</Typography>
         <div className={classes.buttonContainer}>
-          <GBWButton className={classes.optionBtn} variety="solidOutline" onClick={handleConnect}>I'd like to connect and learn more</GBWButton>
-          <GBWButton className={classes.optionBtn} variety="solidOutline" onClick={handleQuestion}>I just have a question or two</GBWButton>
+          <GBWButton className={classes.optionBtn} variety="green" onClick={handleConnect}>I'd like to connect and learn more</GBWButton>
+          <GBWButton className={classes.optionBtn} variety="green" onClick={handleQuestion}>I just have a question or two</GBWButton>
         </div>
         {showConnect &&
           <form className={classes.form} onSubmit={meetAndGreetSubmit}>

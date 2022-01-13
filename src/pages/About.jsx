@@ -1,26 +1,12 @@
 
-import Button from '@material-ui/core/Button';
 import { makeStyles, Typography } from '@material-ui/core';
 import Value from '../components/About/Value';
-import AboutUs from '../images/AboutUs.svg';
-import GBWButton from '../components/GBWButton';
+import AboutUsTop from '../components/About/AboutUsTop';
 import QuoteBanner from '../components/About/QuoteBanner';
+import {Helmet} from "react-helmet";
 
+const PaperSigning = "https://firebasestorage.googleapis.com/v0/b/knh-wedding-planning.appspot.com/o/carousel-images%2FPaper%20Signing.webp?alt=media&token=ba62169e-f884-4306-8b68-36bba544e335";
 const useStyles = makeStyles((theme) => ({
-  header: {
-    backgroundColor: '#decf8d',
-    alignItems: 'center',
-    justifyContent: 'center',
-    display: 'flex',
-    textAlign: 'center',
-  },
-  headerLogo: {
-    height: '160px',
-    [theme.breakpoints.up('sm')]: {
-      height: '280px',
-    },
-    margin: '20px',
-  },
   valuesContainer: {
     display: 'flex',
     alignItems: 'center',
@@ -45,15 +31,39 @@ const useStyles = makeStyles((theme) => ({
   button: {
     marginTop: '50px',
     marginBottom: '50px',
+  },
+  header: {
+    display: 'flex',
+    height: '200px',
+    fontSize: '20px',
+    padding: '24px',
+    alignItems: 'center',
+    justifyContent: 'center',
+    textAlign: 'center',
+    background: `url(${PaperSigning}) no-repeat center center`,
+    backgroundSize: 'cover',
+    width: '100%',
+    [theme.breakpoints.up('sm')]: {
+      backgroundAttachment: 'fixed',
+      height: '300px',
+  }
+  },
+  head: {
+    fontFamily: 'Cinzel',
   }
 }));
 export default function About() {
   const classes = useStyles();
   return (
     <>
+    <Helmet>
+      <title>Our Values - Colorado's Best Sustainable Wedding Planner</title>
+      <meta name="description" content="Green Bee holds true to its core values to help you plan your dream wedding with sustainability in mind." />
+    </Helmet>
       <div className={classes.header}>
-        <img className={classes.headerLogo} alt="About Us" src={AboutUs} />
+        <Typography variant="h1" className={classes.head}>About Us</Typography>
       </div>
+      <AboutUsTop />
       <div className={classes.valuesContainer}>
         <Typography className={classes.valuesHeader} variant="h2"> Green Bee Values </Typography>
         <div className={classes.values}>
@@ -96,11 +106,11 @@ export default function About() {
             We meet you where you’re at and help you prioritize what you want most at your wedding.
           </Value>
         </div>
-        <GBWButton
+        {/*<GBWButton
           variety="solid"
           to="/guide"
         >Download your FREE Green <br /> Wedding Guide
-        </GBWButton>
+        </GBWButton>*/}
         <QuoteBanner />
       </div>
     </>
