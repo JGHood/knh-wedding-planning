@@ -6,13 +6,12 @@ import ContactUs from './pages/ContactUs';
 const Home = loadable(() => import('./pages/Home'));
 //const SignUp = loadable(() => import('./pages/SignUp'));
 //const SignIn = loadable(() => import('./pages/SignIn'));
-const VenueMatcher = loadable(() => import('./pages/VenueMatcher'));
 const Services = loadable(() => import('./pages/Services'));
 const About = loadable(() => import('./pages/About'));
 
 function App() {
   return (
-      <Router>
+      <Router> 
         <div style={{ height: "100%", width: "100%" }}>
           <Navigation/>
           <div

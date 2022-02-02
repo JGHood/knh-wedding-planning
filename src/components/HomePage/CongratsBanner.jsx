@@ -44,6 +44,10 @@ const useStyles = makeStyles((theme) => ({
       left: '40px',
       zIndex: 1,
     },
+    [theme.breakpoints.up('xl')]: {
+      width: '15%',
+      paddingBottom: '15%',
+    },
   },
   textBox: {
     marginBottom: '50px',

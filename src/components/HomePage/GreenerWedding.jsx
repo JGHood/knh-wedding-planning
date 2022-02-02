@@ -24,7 +24,7 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.up('sm')]: {
       width: '60%',
       minWidth: '60%',
-      height: '460px',
+      height: '420px',
     },
   },
   imageContainer: {
@@ -37,7 +37,7 @@ const useStyles = makeStyles((theme) => ({
     backgroundSize: 'cover',
     width: '100%',
     [theme.breakpoints.up('sm')]: {
-      minHeight: '460px',
+      minHeight: '420px',
     },
   },
   textBox: {
@@ -79,12 +79,12 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     justifyContent: 'center',
     marginTop: '20px',
+    marginBottom: '30px',
   },
   btn: {
     fontFamily: 'Cinzel !important',
     marginRight: '20px',
     width: '200px',
-    minHeight: '200px',
   },
   accent: {
     minHeight: '20px',

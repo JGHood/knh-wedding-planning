@@ -5,6 +5,7 @@ import Toolbar from '@material-ui/core/Toolbar';
 //import useMediaQuery from '@material-ui/core/useMediaQuery';
 import { useTheme, makeStyles } from '@material-ui/core/styles';
 import Logo from '../../images/Logo.svg';
+import { Typography } from '@material-ui/core';
 //import { AuthContext } from '../../Authentication';
 
 export default function NavigationDesktop() {
@@ -24,6 +25,7 @@ export default function NavigationDesktop() {
             marginRight: '8px',
             paddingTop: '8px',
             paddingBottom: '11px',
+            letterSpacing: '3px',
             fontFamily: 'Cinzel',
             fontSize: '21px',
             transition: '0.2s',
@@ -55,7 +57,20 @@ export default function NavigationDesktop() {
             marginBottom: 0,
             paddingBottom: 0,
             backgroundColor: theme.palette.quinary.main,
-        }
+        }, 
+        logoContainer: {
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'center',
+            textAlign: 'center',
+            color: theme.palette.secondary.main,
+        },
+        greenBee: {
+            fontFamily: 'Cinzel',
+        },
+        sustainableWeddings: {
+            fontFamily: 'Montserrat',
+        },
     });
     const classes = useStyles();
     return (
@@ -66,9 +81,13 @@ export default function NavigationDesktop() {
                     <NavLink className={classes.styledLink} exact activeClassName={classes.styledLinkActive} to='/'>HOME</NavLink>
                     <NavLink className={classes.styledLink} exact activeClassName={classes.styledLinkActive} to='/services'>SERVICES</NavLink>
                 </div>
+                <div className={classes.logoContainer}>
                 <NavLink to='/'>
-                    <img alt="Website logo: a plant and a bee in a hexagon outline" src={Logo} style={{ height: "90px", margin: "20px", marginTop: '10px', marginBottom: '10px' }} />
+                    <img alt="Website logo: a plant and a bee in a hexagon outline" src={Logo} style={{ height: "90px", margin: "20px", marginTop: '5px', marginBottom: '-5px' }} />
                 </NavLink>
+                    <Typography variant="h3" className={classes.greenBee}>Green Bee</Typography>
+                    <Typography variant="h4" className={classes.sustainableWeddings}>Sustainable Weddings</Typography>
+                </div>
 
                 <div className={classes.linkContainer}>
                     <NavLink className={classes.styledLink} exact activeClassName={classes.styledLinkActive} to='/about'>ABOUT</NavLink>

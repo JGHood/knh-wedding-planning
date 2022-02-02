@@ -46,10 +46,42 @@ export default function NavigationMobile() {
         marginBottom: 0,
         paddingBottom: 0,
         backgroundColor: theme.palette.quinary.main,
+        width: '100%',
+    },
+    logoContainer: {
+        width: '100%',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center'
+    },
+    businessNameTextContainerLeft: {
+        textAlign: 'right'
+    },
+    title: {
+        color: theme.palette.secondary.main,
+        fontFamily: 'Cinzel',
+    },
+    subTitle: {
+        color: theme.palette.secondary.main,
+        fontFamily: 'Montserrat',
+    },
+    headerSide: {
+        width: '10%',
+    },
+    headerNav: {
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'right',
+        alignItems: 'right',
+        marginLeft: '10px',
+    },
+    header: {
+        display: 'flex',
+        width: '100%',
+        justifyContent: 'center',
     },
     phone: {
-        marginLeft: '80px',
-        marginTop: '30px',
+        marginTop: '10px'
     }
         });
     const classes = useStyles();
@@ -73,16 +105,44 @@ export default function NavigationMobile() {
                         {/*isAuthenticated && <NavLink className={classes.styledLink} onClick={() => {signOut(); toggleDrawer(false); window.location.reload()}} activeClassName={classes.styledLinkActive} to="/"><Typography variant="p">SIGN OUT</Typography></NavLink>*/}
                         <Grid item lg={3} >
                         <div style={{marginTop:"2rem"}}>                          
-                           <a className={classes.styledLink} rel="noreferrer" href="https://www.pinterest.com" target="_blank"><PinterestIcon fontSize="large" className={classes.socialMediaIcons}></PinterestIcon></a>
-                           <a className={classes.styledLink} rel="noreferrer" href="https://www.facebook.com" target="_blank"><FacebookIcon fontSize="large" className={classes.socialMediaIcons}/></a>
-                           <a className={classes.styledLink} rel="noreferrer" href="https://www.instagram.com" target="_blank"><InstagramIcon fontSize="large" className={classes.socialMediaIcons}/></a>
+                           { /* <a className={classes.styledLink} rel="noreferrer" href="https://www.pinterest.com" target="_blank"><PinterestIcon fontSize="large" className={classes.socialMediaIcons}></PinterestIcon></a>
+                           <a className={classes.styledLink} rel="noreferrer" href="https://www.facebook.com" target="_blank"><FacebookIcon fontSize="large" className={classes.socialMediaIcons}/></a> */}
+                           <a className={classes.styledLink} rel="noreferrer" href="https://www.instagram.com/greenbeewed/" target="_blank"><InstagramIcon fontSize="large" className={classes.socialMediaIcons}/></a>
                         </div>
                     </Grid>
                     </Grid>
             </Drawer>
         <AppBar position="static" className={classes.appBar}>
-            <Toolbar style={{marginBottom:0, paddingBottom:0}}>
-                    <Grid
+            <Toolbar style={{marginBottom:0, paddingBottom:0, width:'100%'}}>
+                <div className={classes.header}>
+                <div className = {classes.headerSide} />
+                    <div className={classes.logoContainer}>
+                        <div className={classes.businessNameTextContainerLeft}>
+                            <Typography variant="h3" className={classes.title}>
+                            Green 
+                            </Typography>
+                            <Typography variant='h4' className={classes.subTitle}>
+                            Sustainable
+                            </Typography>
+                        </div>
+                        <img alt="Website logo: a plant and a bee in a hexagon outline"  src={Logo} style={{ height: "80px", margin: "10px" }} />
+                        <div className={classes.businessNameTextContainerRight}>
+                            <Typography variant="h3" className={classes.title}>
+                            Bee
+                            </Typography>
+                            <Typography variant='h4' className={classes.subTitle}>
+                            Weddings
+                            </Typography>
+                        </div>
+                    </div>
+                    <div className = {classes.headerSide}>
+                    <div className={classes.headerNav}>
+                    <MenuIcon alt="Menu to open navigation" fontSize="large" color="secondary" onClick={toggleDrawer(true)}>Open</MenuIcon>
+                    <a href="tel:720-725-2114"><PhoneIcon className={classes.phone} alt="Call Green Bee" color="secondary" /></a>
+                    </div>
+                    </div>
+                </div>
+                    {/* <Grid
                         container
                         direction="row"
                         alignItems="center"
@@ -95,17 +155,25 @@ export default function NavigationMobile() {
                             justify= "center"
                         >
                             <Grid item xs={2}/>
-                            <Grid item container justify="center" xs={8}>
+                            <Grid item container justify="center" alignItems='center' xs={8}>
+                                <div>
+                                <Typography>Green</Typography>
+                                <Typography>Sustainable</Typography>
+                                </div>
                                 <NavLink to="/">
                                     <img alt="Website logo: a plant and a bee in a hexagon outline"  src={Logo} style={{ height: "80px", margin: "10px" }} />
                                 </NavLink>
+                                <div>
+                                <Typography>Bee</Typography>
+                                <Typography>Weddings  </Typography>
+                                </div>
                                 </Grid>
                             <Grid item xs={2} container justify="flex-end"  >
                                 <MenuIcon alt="Menu to open navigation" fontSize="large" color="secondary" onClick={toggleDrawer(true)}>Open</MenuIcon>
-                                <PhoneIcon className={classes.phone} alt="Call Green Bee" color="secondary" href="tel:720-725-2114"></PhoneIcon>
+                                <a href="tel:720-725-2114"><PhoneIcon className={classes.phone} alt="Call Green Bee" color="secondary" /></a>
                             </Grid>
                         </Grid>
-                    </Grid>
+                    </Grid> */}
             </Toolbar>
         </AppBar>
 

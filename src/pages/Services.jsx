@@ -74,7 +74,7 @@ export default function Services() {
                 <meta name="description" content="Green Bee focuses on all aspects of sustainability, including economic. We seek to provide a high value to best utilize your wedding budget!" />
             </Helmet>
             <div className={classes.header}>
-                <Typography variant="h1" className={classes.head}>Services</Typography>
+                <Typography variant="h1" className={classes.head}><b>Services</b></Typography>
             </div>
             <div className={classes.flexContainer}>
                 <div className={classes.paragraph}>

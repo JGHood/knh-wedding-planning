@@ -22,7 +22,7 @@ const useStyles = makeStyles((theme) => ({
         marginTop: '16px',
     },
     emailLink: {
-        color: theme.palette.common.white,
+        color: theme.palette.common.black,
         transition: '0.2s',
         '&:hover': {
            color: theme.palette.secondary.main,
@@ -45,7 +45,7 @@ const useStyles = makeStyles((theme) => ({
     },
     copyright: {
         marginTop: '32px',
-        color: theme.palette.common.white
+        color: theme.palette.common.black
     }
 }));
 export default function Footer() {
@@ -53,14 +53,14 @@ export default function Footer() {
     return (
         <div className={classes.footer}>
             <Typography><a className={classes.emailLink} href="tel:720-725-2114">720.725.2114</a></Typography>
-            <Typography><a className={classes.emailLink} href="mailto:kristen@greenbeewed.com">kristen@greenbeewed.com</a></Typography>
+            <Typography><a className={classes.emailLink} href="mailto:events@greenbeewed.com">events@greenbeewed.com</a></Typography>
             <div className={classes.iconContainer}>
-                <a className={classes.styledLink} aria-label="Link to Pinterest Board" rel="noreferrer" href="https://www.pinterest.com" target="_blank"><PinterestIcon fontSize="large" className={classes.socialMediaIcons} /></a>
-                <a className={classes.styledLink} aria-label="Link to Facebook Page" rel="noreferrer" href="https://www.facebook.com" target="_blank"><FacebookIcon fontSize="large" className={classes.socialMediaIcons} /></a>
-                <a className={classes.styledLink} aria-label="Link to Instagram Page" rel="noreferrer" href="https://www.instagram.com" target="_blank"><InstagramIcon fontSize="large" className={classes.socialMediaIcons} /></a>
+                { /*<a className={classes.styledLink} aria-label="Link to Pinterest Board" rel="noreferrer" href="https://www.pinterest.com" target="_blank"><PinterestIcon fontSize="large" className={classes.socialMediaIcons} /></a>
+                <a className={classes.styledLink} aria-label="Link to Facebook Page" rel="noreferrer" href="https://www.facebook.com" target="_blank"><FacebookIcon fontSize="large" className={classes.socialMediaIcons} /></a> */ }
+                <a className={classes.styledLink} aria-label="Link to Instagram Page" rel="noreferrer" href="https://www.instagram.com/greenbeewed/" target="_blank"><InstagramIcon fontSize="large" className={classes.socialMediaIcons} /></a>
             </div>
             <GBWButton variety="outline" to="/contact">Let's get in touch.</GBWButton>
-            <Typography className={classes.copyright}>© 2021 Green Bee Weddings</Typography>
+            <Typography className={classes.copyright}>© 2022 Green Bee Weddings</Typography>
         </div>
     )
 }

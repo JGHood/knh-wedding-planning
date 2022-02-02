@@ -106,6 +106,19 @@ const useStyles = makeStyles((theme) => ({
     color: 'red',
     marginTop: '10px',
   },
+  quickContact: {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    marginTop: '80px'
+  },
+  emailLink: {
+    color: theme.palette.common.black,
+    transition: '0.2s',
+    '&:hover': {
+       color: theme.palette.tertiary.main,
+    },
+},
 }));
 export default function ContactUs() {
   const classes = useStyles();
@@ -332,6 +345,11 @@ export default function ContactUs() {
             {showError && <Typography className={classes.error} variant="body1">Sorry, we couldn't send your request right now, please try again later...</Typography>}
           </form>
         }
+      </div>
+      <div className={classes.quickContact}>
+        <Typography variant="h3">Quick Contact</Typography>
+        <Typography variant="body1">Green Bee Wedding Email: <a className={classes.emailLink} href="mailto:kristen@greenbeewed.com">kristen@greenbeewed.com</a></Typography>
+        <Typography variant="body1">Phone: <a className={classes.emailLink} href="tel:720-725-2114">720.725.2114</a></Typography>
       </div>
     </>
   )

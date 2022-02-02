@@ -85,7 +85,7 @@ export default function SimpleAccordion() {
     return (
         <div className={classes.accordionContainer}>
             <div className={classes.accordionTitleContainer}>
-                <Typography className={classes.accordionTitle} variant="h4">Our Packages</Typography>
+                <Typography className={classes.accordionTitle} variant="h2">Our Packages</Typography>
             </div>
             <Accordion id="plan1" expanded={Plan1} onChange={() => setPlan1(!Plan1)}>
                 <AccordionSummary
@@ -131,6 +131,7 @@ export default function SimpleAccordion() {
                             Starting at $1300
                         </div>
                         <Typography className={classes.compareLink} type="body1"><Link className={classes.compareLink} to="services#compare"><em>Compare Packages</em></Link></Typography>
+                        <Typography type="body1"><Link  to="contact"><b>Book Now</b></Link></Typography>
                     </div>
                 </AccordionDetails>
             </Accordion>
@@ -188,6 +189,7 @@ export default function SimpleAccordion() {
                             Starting at $3900
                         </div>
                         <Typography className={classes.compareLink} type="body1"><Link className={classes.compareLink} to="services#compare"><em>Compare Packages</em></Link></Typography>
+                        <Typography type="body1"><Link  to="contact"><b>Book Now</b></Link></Typography>
                     </div>
                 </AccordionDetails>
             </Accordion>
@@ -218,6 +220,7 @@ export default function SimpleAccordion() {
                             Starting at $500
                         </div>
                         <Typography className={classes.compareLink} type="body1"><Link className={classes.compareLink} to="services#compare"><em>Compare Packages</em></Link></Typography>
+                        <Typography type="body1"><Link  to="contact"><b>Book Now</b></Link></Typography>
                     </div>
                 </AccordionDetails>
             </Accordion>
