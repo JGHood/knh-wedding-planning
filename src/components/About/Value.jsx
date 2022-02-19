@@ -1,5 +1,3 @@
-
-import Button from '@material-ui/core/Button';
 import { makeStyles, Typography } from '@material-ui/core';
 import Environment from '../../images/values/Environment.svg';
 import Excellence from '../../images/values/Excellence.svg';

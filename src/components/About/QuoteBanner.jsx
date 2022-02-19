@@ -1,5 +1,4 @@
 import { makeStyles } from '@material-ui/core/styles';
-import MeetKristen from '../../images/MeetKristen.svg';
 import { NavLink } from 'react-router-dom';
 import { Typography } from '@material-ui/core';
 

@@ -16,10 +16,11 @@ const useStyles = makeStyles((theme) => ({
     paragraph: {
         textAlign: 'center',
         marginTop: '16px',
+        width: '50%',
     },
     text: {
-        marginTop: '24px',
-        marginBottom: '16px',
+        marginTop: '8px',
+        marginBottom: '4px',
         fontStyle: 'italic'
     },
     difference: {
@@ -38,7 +39,6 @@ const useStyles = makeStyles((theme) => ({
     },
     header: {
         display: 'flex',
-        fontSize: '20px',
         height: '200px',
         padding: '24px',
         alignItems: 'center',
@@ -78,16 +78,22 @@ export default function Services() {
             </div>
             <div className={classes.flexContainer}>
                 <div className={classes.paragraph}>
-                    <Typography className={classes.text} variant="body2">
+                    <Typography variant="body1">
+                        Whether you're just looking for some extra help making your dream day come to life or 
+                        looking for someone to plan out every last detail, we have the perfect plan for you! 
+                        Our three plans and a la carte options allow you to customize and choose just how involved
+                        you want us to be in at a price point that works for you.
+                    </Typography>
+                    <Typography className={classes.text} variant="body1">
                         Click on the packages below to expand for more information!
                     </Typography>
-                    <Typography className={classes.text} variant="body2">
+                    <Typography className={classes.text} variant="body1">
                         Scroll down for a comparison chart of all plans.
                     </Typography>
                 </div>
                 <ServicesAccordion />
                 <ServicesTable />
-                <div className={classes.difference}>
+                {/* <div className={classes.difference}>
                     <Typography variant="h3">
                         <em>
                             What's the difference between a wedding planner
@@ -101,7 +107,7 @@ export default function Services() {
                         I am thrilled to bring your love story to life in your wedding while
                         helping you reduce waste, support local business,
                     </Typography>
-                </div>
+                </div> */}
             </div>
         </>
     );

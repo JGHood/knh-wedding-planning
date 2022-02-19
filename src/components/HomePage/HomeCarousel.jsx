@@ -1,6 +1,5 @@
 //import { Carousel } from 'react-responsive-carousel';
-import { NavLink } from 'react-router-dom';
-import { Typography, Grid, Button, useMediaQuery } from '@material-ui/core';
+import { Typography, Grid, useMediaQuery } from '@material-ui/core';
 import GBWButton from '../GBWButton';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import makeStyles from '@material-ui/core/styles/makeStyles';

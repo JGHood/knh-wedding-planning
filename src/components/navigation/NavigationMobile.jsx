@@ -1,12 +1,12 @@
-import {useContext, useState} from 'react';
+import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import { AppBar, Toolbar, Grid, Typography, Drawer } from '@material-ui/core';
 //import { signOut } from '../../firebase';
 import { useTheme, makeStyles } from '@material-ui/core/styles';
 import Logo from '../../images/Logo.svg';
-import PinterestIcon from '@material-ui/icons/Pinterest';
+// import PinterestIcon from '@material-ui/icons/Pinterest';
 import InstagramIcon from '@material-ui/icons/Instagram';
-import FacebookIcon from '@material-ui/icons/Facebook';
+// import FacebookIcon from '@material-ui/icons/Facebook';
 //import { AuthContext } from '../../Authentication';
 import MenuIcon from '@material-ui/icons/Menu';
 import PhoneIcon from '@material-ui/icons/Phone';
