@@ -55,6 +55,15 @@ const accordionStyles = makeStyles((theme) => ({
     justifyContent: 'center',
     textAlign: 'center',
     fontFamily: 'Montserrat',
+  },
+  serviceHeader: {
+      borderBottom: `2.5px solid ${theme.palette.primary.main}`,
+      paddingBottom: '1px',
+      marginBottom: '12px',
+      marginTop: '25px',
+  },
+  listItem: {
+      paddingBottom: '4px',
   }
 }));
 

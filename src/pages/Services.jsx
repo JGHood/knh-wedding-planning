@@ -16,7 +16,7 @@ const useStyles = makeStyles((theme) => ({
     paragraph: {
         textAlign: 'center',
         marginTop: '16px',
-        width: '50%',
+        width: '100%',
     },
     text: {
         marginTop: '8px',
@@ -27,7 +27,7 @@ const useStyles = makeStyles((theme) => ({
         marginTop: '80px',
         width: '90%',
         [theme.breakpoints.up('sm')]: {
-            width: '40%',
+            width: '0%',
         },
         textAlign: 'center',
     },
@@ -84,10 +84,7 @@ export default function Services() {
                         Our three plans and a la carte options allow you to customize and choose just how involved
                         you want us to be in at a price point that works for you.
                     </Typography>
-                    <Typography className={classes.text} variant="body1">
-                        Click on the packages below to expand for more information!
-                    </Typography>
-                    <Typography className={classes.text} variant="body1">
+                    <Typography className={classes.text} variant="body2">
                         Scroll down for a comparison chart of all plans.
                     </Typography>
                 </div>

@@ -81,7 +81,7 @@ let theme = createMuiTheme({
       },
     },
     body1: {
-      fontSize: '14px',
+      fontSize: '13px',
       '@media (min-width:768px)': {
         fontSize: "15px",
       },
@@ -90,15 +90,15 @@ let theme = createMuiTheme({
       },
     },
     body2: {
-      fontSize: '18px',
+      fontSize: '12px',
       '@media (min-width:768px)': {
-        fontSize: "22px",
+        fontSize: "14px",
       },
       '@media (min-width:1300px)': {
-        fontSize: "26px"
+        fontSize: "16px"
       },
     }
-  },
+  },  
   palette: {
     primary: {
       main: "#93a683",
@@ -114,6 +114,9 @@ let theme = createMuiTheme({
     },
     quinary: {
       main: '#4b6438',
+    },
+    SeaFoamGreen: {
+      main: '#c2d1b5',
     },
     bg: {
       main: "#EFEEE9",

@@ -5,6 +5,7 @@ import AccordionSummary from '@material-ui/core/AccordionSummary';
 import AccordionDetails from '@material-ui/core/AccordionDetails';
 import Typography from '@material-ui/core/Typography';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import ServiceGuide from '../../pdf/ServiceGuide_GreenBeeWeddings.pdf';
 
 export default function ServiceAccordion({ title, price, id, expanded, onChange, children, noBottom }) {
   const classes = accordionStyles();
@@ -30,7 +31,7 @@ export default function ServiceAccordion({ title, price, id, expanded, onChange,
             {price}
           </div>
           <Typography className={classes.compareLink} type="body1"><Link className={classes.compareLink} to="services#compare"><em>Compare Packages</em></Link></Typography>
-          <Typography type="body1"><Link to="contact"><b>Book Now</b></Link></Typography>
+          <Typography className={classes.compareLink} type="body1"><a href={ServiceGuide} className={classes.compareLink}>Download Service Guide PDF</a></Typography>
         </div> }
       </AccordionDetails>
     </Accordion>

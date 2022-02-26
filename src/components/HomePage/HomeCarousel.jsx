@@ -97,7 +97,7 @@ export default function HomeCarousel(props) {
         ct4: {
             width: '80%',
             marginTop: "3rem",
-            animation: "$fadeIn4 2.0s ease-in-out",
+            animation: "$fadeIn4 1.0s ease-in-out",
             textTransform: 'uppercase',
         },
         carousel: {
@@ -132,7 +132,7 @@ export default function HomeCarousel(props) {
             justifyContent: 'center',
             width: '80%',
             marginTop: "3rem",
-            animation: "$fadeIn4 2.0s ease-in-out",
+            animation: "$fadeIn4 1.5s ease-in-out",
             textTransform: 'uppercase',
         }
     }));
@@ -147,8 +147,8 @@ export default function HomeCarousel(props) {
                 alignItems="center"
             >
                 <Grid item className={classes.ct1}><Typography className={classes.text} variant="h2">{props.ct1}</Typography></Grid>
-                <Grid item className={classes.ct2}><Typography className={classes.text} variant="h2">{props.ct2}</Typography></Grid>
-                <Grid item className={classes.ct3}><Typography className={classes.text} variant="h2">{props.ct3}</Typography></Grid>
+                <Grid item className={classes.ct1}><Typography className={classes.text} variant="h2">{props.ct2}</Typography></Grid>
+                <Grid item className={classes.ct1}><Typography className={classes.text} variant="h2">{props.ct3}</Typography></Grid>
                 {props.ct4 && <Grid item className={classes.ct4}><Typography className={classes.text} variant="h5">{props.ct4}</Typography></Grid>}
                 <Grid item className={classes.btn}><GBWButton variety="outline" to="/services" className={classes.btn} variant="h2">View Our Plans</GBWButton></Grid>
             </Grid>

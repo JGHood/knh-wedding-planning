@@ -1,22 +1,33 @@
-import { Typography } from '@material-ui/core';
+import { Typography, Button } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
-import GBWButton from '../GBWButton';
+import { NavLink } from "react-router-dom";
 
 var CoupleBouquet = "https://firebasestorage.googleapis.com/v0/b/knh-wedding-planning.appspot.com/o/carousel-images%2FCoupleBouquet.webp?alt=media&token=897a55c7-9e05-4e87-a10b-b0191aec28d3";
 const useStyles = makeStyles((theme) => ({
   bannerContainer: {
     width: '100%',
     display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
     marginBottom: '60px',
     [theme.breakpoints.down('xs')]: {
       flexWrap: 'wrap',
+    },
+  },
+  innerContainer: {
+    width: '90%',
+    display: 'flex',
+    alignSelf: 'center',
+    marginBottom: '60px',
+    [theme.breakpoints.down('xs')]: {
+      flexWrap: 'wrap',
+      width: '100%',
     },
   },
   textContainer: {
     width: '100%',
     backgroundColor: theme.palette.bg.main,
     alignItems: 'center',
-    
     padding: '24px',
     paddingBottom: 0,
     paddingTop: '15px',
@@ -58,13 +69,13 @@ const useStyles = makeStyles((theme) => ({
   areYou: {
     textAlign: 'center',
     textTransform: 'uppercase',
-    width:'100%',
+    width: '100%',
     letterSpacing: '2px',
   },
   head: {
     textAlign: 'center',
     textTransform: 'uppercase',
-    width:'100%',
+    width: '100%',
     fontFamily: 'Cinzel'
   },
   greener: {
@@ -74,6 +85,7 @@ const useStyles = makeStyles((theme) => ({
     paddingBottom: '10px',
     letterSpacing: '1px',
     lineHeight: '22px',
+    fontFamily: 'serif',
   },
   btnGroup: {
     display: 'flex',
@@ -82,51 +94,66 @@ const useStyles = makeStyles((theme) => ({
     marginBottom: '30px',
   },
   btn: {
-    fontFamily: 'Cinzel !important',
+    backgroundColor: theme.palette.primary.main,
+    fontFamily: 'Cinzel',
     marginRight: '20px',
-    width: '200px',
+    width: '40%',
+    minHeight: '80px',
+    '&:hover': {
+      backgroundColor: theme.palette.secondary.main,
+    },
+  },
+  nav: {
+    color: theme.palette.common.white,
+    textDecoration: 'none',
   },
   accent: {
     minHeight: '20px',
     backgroundColor: theme.palette.tertiary.main,
     marginTop: '40px',
+    display: 'flex',
+    alignSelf: 'center',
+    width: '90%',
+    [theme.breakpoints.down('xs')]: {
+      width: '100%',
+    },
   }
 }));
 export default function GreenerWedding() {
   const classes = useStyles();
   return (
     <>
-          <div className={classes.accent} />
-    <div className={classes.bannerContainer}>
-      <div className={classes.textContainer}>
-        <span className={classes.textBox}>
-          <Typography variant="h3" className={classes.areYou}>
-            Are you wanting to make
-          </Typography>
-          <Typography variant="h2" className={classes.head}>
-            <b>your wedding <span className={classes.greener}>greener?</span></b>
-          </Typography>
-          <hr />
-          <Typography variant="body1" className={classes.p}>
-          You've come to the right place! Here at Green Bee Weddings, we specialize in planning and coordinating beautiful, memorable, and stress-free weddings with an emphasis on reducing waste and supporting our local community.
-          </Typography>
-          <Typography variant="body1" className={classes.p}>
-          You don't have to compromise your dream wedding for being eco-friendly and we're here to help. Check out our services below and drop us a line to chat more!
-          </Typography>
-          {/*<Typography variant="body1" className={classes.p}>
-          In the meantime, grab your copy of the Green Wedding Guide down below!
-  </Typography>*/}
-        </span>
-        <div className={classes.btnGroup}>
-          <GBWButton to="/contact" className={classes.btn} variety="green">Get In Touch</GBWButton>
-          {/*<GBWButton className={classes.btn} variety="green">Green wedding Guide</GBWButton>*/}
+      <div className={classes.bannerContainer}>
+              <div className={classes.accent} />
+        <div className={classes.innerContainer}>
+        <div className={classes.textContainer}>
+          <span className={classes.textBox}>
+            <Typography variant="h3" className={classes.areYou}>
+              Are you wanting to make
+            </Typography>
+            <Typography variant="h2" className={classes.head}>
+              <b>your wedding <span className={classes.greener}>greener?</span></b>
+            </Typography>
+            <hr />
+            <Typography variant="body1" className={classes.p}>
+              You've come to the right place! Here at Green Bee Weddings, we specialize in planning and coordinating beautiful, memorable, and stress-free weddings with an emphasis on reducing waste and supporting our local community.
+            </Typography>
+            <Typography variant="body1" className={classes.p}>
+              You don't have to compromise your dream wedding for being eco-friendly and we're here to help. Check out our services below and drop us a line to chat more!
+            </Typography>
+            <Typography variant="body1" className={classes.p}>
+              In the meantime, grab your copy of the <b>free</b> Green Wedding Guide down below!
+            </Typography>
+          </span>
+          <div className={classes.btnGroup}>
+            <Button to="/contact" className={classes.btn}><NavLink className={classes.nav} to="contact">Get In Touch</NavLink></Button>
+            <Button to="/green-wedding-guide" className={classes.btn}><NavLink className={classes.nav} to="green-wedding-guide">Green Wedding Guide</NavLink></Button>
+          </div>
+        </div>
+        <div className={classes.imageContainer}>
+        </div>
         </div>
       </div>
-      <div className={classes.imageContainer}>
-      </div>
-      <div>
-      </div>
-    </div>
     </>
 
   )

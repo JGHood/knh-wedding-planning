@@ -16,7 +16,7 @@ export default function Home() {
                 ct1="Planning + Coordinating"
                 ct2="Beautiful Weddings for"
                 ct3="Eco-Friendly Couples"
-                ct4="Serving Denver, CO + oklahoma + beyond"
+                ct4="Serving Denver, Colorado + beyond"
             />
             <HomeBanner />
             <CongratsBanner />

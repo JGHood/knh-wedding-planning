@@ -11,7 +11,7 @@ const useStyles = makeStyles((theme) => ({
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
-        backgroundColor: theme.palette.primary.main,
+        backgroundColor: theme.palette.SeaFoamGreen.main,
         paddingTop: '36px',
         
     },

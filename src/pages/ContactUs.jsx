@@ -1,5 +1,4 @@
-
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { makeStyles, Typography, TextField, Checkbox, FormControlLabel, Select, MenuItem, InputLabel, FormControl } from '@material-ui/core';
 import GBWButton from '../components/GBWButton';
 import { send, init } from 'emailjs-com';
@@ -121,6 +120,9 @@ const useStyles = makeStyles((theme) => ({
 },
 }));
 export default function ContactUs() {
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, []);
   const classes = useStyles();
   const [submitDisabled, setSubmitDisabled] = useState(false);
   const [meetAndGreetToSend, setMeetAndGreetToSend] = useState({

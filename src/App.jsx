@@ -2,8 +2,9 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import loadable from '@loadable/component';
 import Navigation from './components/navigation/Navigation';
 import Footer from './components/Footer';
-import ContactUs from './pages/ContactUs';
+const ContactUs = loadable(() => import('./pages/ContactUs'));
 const Home = loadable(() => import('./pages/Home'));
+const Guide = loadable(() => import('./pages/Guide'));
 //const SignUp = loadable(() => import('./pages/SignUp'));
 //const SignIn = loadable(() => import('./pages/SignIn'));
 const Services = loadable(() => import('./pages/Services'));
@@ -24,6 +25,7 @@ function App() {
             <Route exact path="/services" component={Services} />
             <Route exact path="/contact" component={ContactUs} />
             <Route exact path="/" component={Home} />
+            <Route exact path="/green-wedding-guide" component={Guide} />
           </div>
           <Footer />
         </div>

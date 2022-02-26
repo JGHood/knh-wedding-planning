@@ -47,28 +47,24 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   text: {
+    fontFamily: 'Montserrat',
     lineHeight: '20px',
     marginTop: '50px',
     paddingLeft: '24px',
-    fontFamily: 'Smooch',
-    color: 'black',
+    color: theme.palette.common.black,
     [theme.breakpoints.up('sm')]: {
       lineHeight: '28px',
     },
-
+  },
+  head: {
+    color: theme.palette.common.black,
+    fontFamily: "Cinzel",
   },
   textBox: {
     marginBottom: '50px',
     [theme.breakpoints.up('sm')]: {
     },
   },
-  readMore: {
-    fontFamily: 'Cinzel',
-    paddingLeft: '12px',
-    color: theme.palette.secondary.main,
-    marginTop: '5px',
-    textDecoration: 'none',
-  }
 }));
 export default function QuoteBanner() {
   const classes = useStyles();
@@ -78,12 +74,15 @@ export default function QuoteBanner() {
       </div>
       <div className={classes.textContainer}>
         <span className={classes.textBox}>
-          <Typography variant="h2" className={classes.text}>
-          Congratulations on your Engagement! 
+          <Typography variant="h2" className={classes.head}>
+          About Kristen, Owner
           </Typography>
-          <div className={classes.readMore}>
-          <Typography variant="body1"><NavLink className={classes.readMore} exact to="/about">Read More About Kristen →</NavLink></Typography>
-          </div>
+          <Typography variant="body1" className={classes.text}>
+            Meet owner and lead planner of Green Bee Weddings, based out of Denver, Colorado. Kristen is passionate, talented, driven, and brings a smile to everything she does. With her background in environmental sociology and education, she is eager to capture your love story in a way that respects our planet and community.
+          </Typography>
+          <Typography variant="body1" className={classes.text}>
+            When not doing wedding stuff, Kristen can be found in the mountains on a snowboard, on a hike with her dog Ollie and husband James, or playing video games with friends.
+          </Typography>
         </span>
       </div>
       <div>

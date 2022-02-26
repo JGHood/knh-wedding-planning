@@ -8,12 +8,18 @@ const useStyles = makeStyles((theme) => ({
     marginTop: '40px',
     width: '100%',
     display: 'flex',
+    justifyContent: 'center',
+  },
+  innerContainer: {
+    width: '90%',
+    display: 'flex',
     [theme.breakpoints.down('xs')]: {
       flexWrap: 'wrap',
+      width: '100%',
     },
   },
   textContainer: {
-    width: '100%',
+    width: '900%',
     backgroundColor: theme.palette.primary.main,
     color: 'white',
     height: '200px',
@@ -85,6 +91,7 @@ export default function HomeBanner() {
   const classes = useStyles();
   return (
     <div className={classes.bannerContainer}>
+      <div className={classes.innerContainer}>
       <div className={classes.textContainer}>
         <span className={classes.textBox}>
           <Typography className={classes.weAre}>
@@ -99,7 +106,6 @@ export default function HomeBanner() {
       </div>
       <div className={classes.imageContainer}>
       </div>
-      <div>
       </div>
     </div>
 

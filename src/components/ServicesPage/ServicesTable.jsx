@@ -25,7 +25,7 @@ function createData(label, DayOfPlan, MiddlePlan, FullServicePlan) {
 
 export default function ServicesTable() {
     const isDesktop = useMediaQuery('(min-width:768px)');
-    const tableScroll = useMediaQuery('(min-width:360px)');
+    const tableScroll = useMediaQuery('(min-width:370px)');
     const useStyles = makeStyles((theme) => ({
         table: {
             fontSize: "300px"
@@ -67,6 +67,12 @@ export default function ServicesTable() {
                 fontSize: '13px',
               },
         },
+        labelCell: {
+            [theme.breakpoints.down('xs')]: {
+                maxWidth: '110px',
+                fontSize: '13px',
+              },
+        },
         styledTableRow: {
             '&:nth-of-type(odd)': {
                 backgroundColor: "#f7f7f7",
@@ -80,28 +86,30 @@ export default function ServicesTable() {
     const classes = useStyles();
 
     const rows = [
-        createData('In person consultations', 2, 8, 0),
-        createData('Emails, calls, and texts', 'Unlimited', 'Unlimited', 'Unlimited'),
-        createData('Venue walkthrough', <Check />, <Check />, ''),
-        createData('Seating & Reception Diagrams', <Check />, <Check />, ''),
-        createData('Music Selection Assistance', <Check />, <Check />, <Check />),
-        createData('Detailed day-of timeline', <Check />, <Check />, <Check />),
-        createData('Wedding Rehearsal Coordination', <Check />, <Check />, ''),
-        createData('Setup/Decor Support', <Check />, <Check />, ''),
-        createData('Vendor Recs', <Check />, <Check />, <Check />),
-        createData('Day-Of Coordination', '8 hrs', '12 hrs', ''),
-        createData('Custom Budget & Payment Spreadsheet', '', <Check />, <Check />),
-        createData('Custom Mood Boards', '', <Check />, ''),
-        createData('Custom monthly checklist', '', <Check />, <Check />),
-        createData('Planning Check-Ins', '', 'Weekly', 'Monthly'),
-        createData('Venue and vendor assistance', '', <Check />, <Check />),
-        createData('Vendor Management', '', <Check />, ''),
-        createData('Attend vendor meetings, tastings, etc.', '', <Check />, ''),
-        createData('Hotel Block and Transportation Logistics', '', <Check />, ''),
-        createData('Wedding Website Building', '', <Check />, ''),
-        createData('Paper goods design', '', <Check />, ''),
-
-        createData('Pricing starting at', "$1300", "$3900", "$500")
+        createData('In-person or Virtual Planning Sessions',2,8,0),
+        createData('Regular planning check-ins','Monthly','Weekly','Monthly'),
+        createData('Full access to our online planning program',<Check />,<Check />,<Check />),
+        createData('Custom budget & payment tracker and month-by-month checklist',<Check />,<Check />,<Check />),
+        createData('Our trusted vendor recommendations',<Check />,<Check />,<Check />),
+        createData('Vendor contract review',<Check />,<Check />,''),
+        createData('Our expert tips for working with vendors, including meeting checklists',<Check />,<Check />,<Check />),
+        createData('Aid music selection and seating & reception diagrams',<Check />,<Check />,''),
+        createData('Detailed timeline for wedding VIPs and vendors',<Check />,<Check />,<Check />),
+        createData('Final communications with vendors and wedding VIPs',<Check />,<Check />,''),
+        createData('Vendor payment distribution',<Check />,<Check />,''),
+        createData('Coordinate wedding rehearsal the day before or day of.(up to one hour)',<Check />,<Check />,''),
+        createData('Setup support (substantial DIY decor may be subject to additional fees)',<Check />,<Check />,''),
+        createData('Up to 8 hours of day-of coordination, serving as the single point of contact for the day',<Check />,<Check />,''),
+        createData('Oversee execution of all day-of events (ceremony, grand entrance, cake cutting, etc.)',<Check />,<Check />,''),
+        createData('Our expert emergency kit',<Check />,<Check />,''),
+        createData('Recycling and composting coordination at all events',<Check />,<Check />,''),
+        createData('Vendor contract negotiation; serve as contact for all vendors','',<Check />,''),
+        createData('Wedding website design','',<Check />,''),
+        createData('Coordination of tastings, site visits, and vendor meetings','',<Check />,''),
+        createData('Guidance establishing a vision and selecting aesthetic details, including custom mood boards','',<Check />,''),
+        createData('Assistance with save-the-date, invitation, and signage design, and production','',<Check />,''),
+        createData('Assist with lodging and transportation logistics','',<Check />,''),
+        createData('Investment Starts at','$1300','$3900','$500'),
     ];
 
     return (
@@ -122,7 +130,7 @@ export default function ServicesTable() {
                     <TableBody>
                         {rows.map((row) => (
                             <TableRow className={classes.styledTableRow} key={row.label}>
-                                <TableCell className={classes.styledTableCell} component="main" scope="row">
+                                <TableCell className={classes.labelCell} component="main" scope="row">
                                     <Typography variant="body1">
                                         {row.label}
                                     </Typography>

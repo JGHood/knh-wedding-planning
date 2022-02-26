@@ -5,12 +5,18 @@ import GBWButton from '../GBWButton';
 var KristenHeadshot = "https://firebasestorage.googleapis.com/v0/b/knh-wedding-planning.appspot.com/o/carousel-images%2FKristenHeadshot.webp?alt=media&token=74f6224d-2e86-4cd6-b685-42b4f19fecce";
 const useStyles = makeStyles((theme) => ({
   bannerContainer: {
-    position: 'relative',
+    display: 'flex',
+    justifyContent: 'center',
     width: '100%',
     minHeight: '200px',
+  },
+  innerContainer: {
+    width: '90%',
+    position: 'relative',
     [theme.breakpoints.down('xs')]: {
       flexWrap: 'wrap',
-    },
+      width: '100%',
+    }
   },
   textContainer: {
     width: '100%',
@@ -67,13 +73,13 @@ const useStyles = makeStyles((theme) => ({
   areYou: {
     textAlign: 'center',
     textTransform: 'uppercase',
-    width:'100%',
+    width: '100%',
     letterSpacing: '2px',
   },
   head: {
     textAlign: 'center',
     letterSpacing: '2.5px',
-    width:'100%',
+    width: '100%',
     fontFamily: 'Smooch'
   },
   greener: {
@@ -87,21 +93,22 @@ const useStyles = makeStyles((theme) => ({
   signature: {
     textAlign: 'right',
     letterSpacing: '2.5px',
-    width:'100%',
+    width: '100%',
     fontFamily: 'Smooch',
     paddingRight: '20px',
   },
   sig: {
     textAlign: 'right',
     letterSpacing: '1px',
-    width:'100%',
+    width: '100%',
   }
 }));
 export default function CongratsBanner() {
   const classes = useStyles();
   return (
     <div className={classes.bannerContainer}>
-    <div className={classes.imageContainer}>
+      <div className={classes.innerContainer}>
+      <div className={classes.imageContainer}>
       </div>
       <div className={classes.textContainer}>
         <span className={classes.textBox}>
@@ -110,18 +117,17 @@ export default function CongratsBanner() {
           </Typography>
           <hr />
           <Typography variant="h6" className={classes.p}>
-          This next stage in your life is an exciting and beautiful one as your relationship evolves, but can also be stressful and overwhelming with planning the wedding that comes along with it. 
-          At Green Bee, we're excited to help make the process as smooth as possible so that you can focus on what matters.
+            This next stage in your life is an exciting and beautiful one as your relationship evolves, but can also be stressful and overwhelming with planning the wedding that comes along with it.
+            At Green Bee, we're excited to help make the process as smooth as possible so that you can focus on what matters.
           </Typography>
           <Typography variant="h2" className={classes.signature}>
-          - Kristen
+            - Kristen
           </Typography>
           <Typography variant="body1" className={classes.sig}>
             Founder + Lead Planner
           </Typography>
         </span>
       </div>
-      <div>
       </div>
     </div>
   )
