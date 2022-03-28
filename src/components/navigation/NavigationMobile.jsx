@@ -125,7 +125,9 @@ export default function NavigationMobile() {
                             Sustainable
                             </Typography>
                         </div>
-                        <img alt="Website logo: a plant and a bee in a hexagon outline"  src={Logo} style={{ height: "80px", margin: "10px" }} />
+                        <NavLink to='/'>
+                            <img alt="Website logo: a plant and a bee in a hexagon outline"  src={Logo} style={{ height: "80px", margin: "10px" }} />
+                        </NavLink>
                         <div className={classes.businessNameTextContainerRight}>
                             <Typography variant="h3" className={classes.title}>
                             Bee

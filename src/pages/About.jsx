@@ -57,7 +57,7 @@ export default function About() {
   return (
     <>
     <Helmet>
-      <title>Our Values - Colorado's Best Sustainable Wedding Planner</title>
+      <title>Our Values - Colorado's Top Sustainable Wedding Planners</title>
       <meta name="description" content="Green Bee holds true to its core values to help you plan your dream wedding with sustainability in mind." />
     </Helmet>
       <div className={classes.header}>

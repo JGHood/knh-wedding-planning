@@ -16,11 +16,6 @@ const useStyles = makeStyles((theme) => ({
     width: '100%',
     backgroundColor: theme.palette.secondary.main,
     color: theme.palette.primary.main,
-    height: '250px',
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-    flexDirection: 'column',
     fontSize: '12px',
     padding: '16px',
     paddingTop: '0',
@@ -49,7 +44,7 @@ const useStyles = makeStyles((theme) => ({
   text: {
     fontFamily: 'Montserrat',
     lineHeight: '20px',
-    marginTop: '50px',
+    marginTop: '20px',
     paddingLeft: '24px',
     color: theme.palette.common.black,
     [theme.breakpoints.up('sm')]: {
@@ -73,12 +68,16 @@ export default function QuoteBanner() {
       <div className={classes.imageContainer}>
       </div>
       <div className={classes.textContainer}>
-        <span className={classes.textBox}>
-          <Typography variant="h2" className={classes.head}>
+      <Typography variant="h2" className={classes.head}>
           About Kristen, Owner
-          </Typography>
+      </Typography>
+        <span className={classes.textBox}>
           <Typography variant="body1" className={classes.text}>
             Meet owner and lead planner of Green Bee Weddings, based out of Denver, Colorado. Kristen is passionate, talented, driven, and brings a smile to everything she does. With her background in environmental sociology and education, she is eager to capture your love story in a way that respects our planet and community.
+          </Typography>
+          <Typography variant="body1" className={classes.text}>
+            Kristen started Green Bee as a sustainable wedding planner with a vision of helping couples celebrate not only their love, but their community and planet, too. As we grow increasingly conscious of our personal impacts on the world,
+            Kristen saw that she could use her background to help passionate couples plan their celebrations through a sustainable lens, allowing them to focus fully on their special day.
           </Typography>
           <Typography variant="body1" className={classes.text}>
             When not doing wedding stuff, Kristen can be found in the mountains on a snowboard, on a hike with her dog Ollie and husband James, or playing video games with friends.

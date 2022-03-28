@@ -150,7 +150,7 @@ export default function HomeCarousel(props) {
                 <Grid item className={classes.ct1}><Typography className={classes.text} variant="h2">{props.ct2}</Typography></Grid>
                 <Grid item className={classes.ct1}><Typography className={classes.text} variant="h2">{props.ct3}</Typography></Grid>
                 {props.ct4 && <Grid item className={classes.ct4}><Typography className={classes.text} variant="h5">{props.ct4}</Typography></Grid>}
-                <Grid item className={classes.btn}><GBWButton variety="outline" to="/services" className={classes.btn} variant="h2">View Our Plans</GBWButton></Grid>
+                <Grid item className={classes.btn}><GBWButton variety="outline" to="/services" className={classes.btn} variant="h2">View Our Packages</GBWButton></Grid>
             </Grid>
 
             <div className={classes.img} />

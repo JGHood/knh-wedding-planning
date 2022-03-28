@@ -9,7 +9,7 @@ export default function Home() {
     return (
         <div>
             <Helmet>
-                <title>Green Bee Weddings- Colorado's Sustainable Wedding Planner</title>
+                <title>Green Bee Weddings- Denver's Sustainable Wedding Planner</title>
                 <meta name="description" content="Green Bee Weddings is Colorado's leading sustainable wedding planner, allowing you to celebrate your love for each other and for the environment." />
             </Helmet>
             <HomeCarousel
@@ -22,7 +22,6 @@ export default function Home() {
             <CongratsBanner />
             <GreenerWedding />
             <OurServices/>
-            {/*<MeetKristenBanner />*/}
         </div>
     )
 }

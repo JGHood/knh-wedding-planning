@@ -23,12 +23,12 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.up('sm')]: {
       width: '60%',
       minWidth: '60%',
-      height: '350px',
+      height: '600px',
     },
   },
   imageContainer: {
     color: 'white',
-    height: '200px',
+    height: '300px',
     fontSize: '20px',
     padding: '24px',
     alignItems: 'center',
@@ -36,7 +36,7 @@ const useStyles = makeStyles((theme) => ({
     backgroundSize: 'cover',
     width: '100%',
     [theme.breakpoints.up('sm')]: {
-      minHeight: '350px',
+      minHeight: '600px',
     },
   },
   textBox: {
@@ -66,7 +66,7 @@ const useStyles = makeStyles((theme) => ({
     padding: '40px 20px 5px 30px'
   }, 
   p: {
-    padding: '15px 30px'
+    padding: '4px 30px'
   }
 }));
 export default function AboutUsTop() {
@@ -84,11 +84,24 @@ export default function AboutUsTop() {
     <div className={classes.bannerContainer}>
       <div className={classes.textContainer}>
         <span className={classes.textBox}>
-          <Typography variant="h3" className={classes.p}>
-          You don’t need to sacrifice having a fun, memorable, and affordable wedding for being ethical and sustainable. 
+          <Typography variant="body1" className={classes.p}>
+              You don’t need to sacrifice having a fun, memorable, and affordable wedding for being ethical and sustainable! We are thrilled to bring your ideas to life while working together to reduce waste, support local business, and positively impact our community.
           </Typography>
-          <Typography variant="h3" className={classes.p}>
-          We are thrilled to bring your ideas to life while working together to reduce waste, support local business, and positively impact our community.
+          <Typography variant="h4" className={classes.p}>
+              <b>What is sustainable wedding planning?</b>
+          </Typography>
+          <Typography variant="body1" className={classes.p}>
+              As sustainable wedding planners, we focus on all core tenants of sustainability: social, economic, and environmental. We do this in many ways, such as:
+              <ol>
+                <li>Partnering with local businesses to keep money local and offer better prices to couples</li>
+                <li>Partnering with like-minded venues and vendors who implement their own sustainable practices</li>
+                <li>Reducing enviromental impact by offering planet-friendly twists on classic wedding traditions</li>
+                <li>Managing event waste streams efficiently with venues and vendors to ensure we're recycling and composting where we can</li>
+                <li>Minimizing waste by finding sustainably sourced or reusable alternatives to common decoration items</li>
+                <li>Tracking the carbon footprint of travel of wedding guests</li>
+                <li>Seeking out local, minority owned vendors to spread out your event's economic impact</li>
+              </ol>
+              While your vision will always come first, these and countless other sustainable methods we use reduce the impact of your wedding, allowing you to focus fully on your day of celebration while knowing you're celebrating the planet and your community, too!
           </Typography>
         </span>
       </div>

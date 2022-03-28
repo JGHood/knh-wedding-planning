@@ -3,9 +3,11 @@ import makeStyles from '@material-ui/core/styles/makeStyles';
 import ServicesTable from '../components/ServicesPage/ServicesTable';
 import ServicesAccordion from '../components/ServicesPage/ServicesAccordion';
 import { useLocation } from 'react-router';
-import { Typography } from '@material-ui/core';
+import { Typography, Button } from '@material-ui/core';
 import { Helmet } from "react-helmet";
+import { NavLink } from 'react-router-dom';
 
+import ServiceGuide from '../pdf/ServiceGuide_GreenBeeWeddings.pdf'
 const GreenTableSetting = "https://firebasestorage.googleapis.com/v0/b/knh-wedding-planning.appspot.com/o/carousel-images%2FGreenTableSetting.jpg?alt=media&token=ddd670a7-3498-4d3f-b5b1-7afcb8a16998";
 const useStyles = makeStyles((theme) => ({
     flexContainer: {
@@ -54,7 +56,22 @@ const useStyles = makeStyles((theme) => ({
       },
       head: {
         fontFamily: 'Cinzel',
-      }
+      },   
+      btn: {
+        border: `4px solid ${theme.palette.tertiary.main}`,
+        borderRadius: '0px',
+        '&:hover': {
+          backgroundColor: theme.palette.tertiary.main,
+       },
+       marginTop: '40px',
+    },
+    nav: {
+    color: 'black',
+    textDecoration: 'none',
+    },
+    interest: {
+        marginTop: '40px',
+    }
 }));
 
 
@@ -82,14 +99,17 @@ export default function Services() {
                         Whether you're just looking for some extra help making your dream day come to life or 
                         looking for someone to plan out every last detail, we have the perfect plan for you! 
                         Our three plans and a la carte options allow you to customize and choose just how involved
-                        you want us to be in at a price point that works for you.
+                        you want us to be at a price point that works for you, all while following our commitment to sustainable wedding planning.
                     </Typography>
                     <Typography className={classes.text} variant="body2">
                         Scroll down for a comparison chart of all plans.
                     </Typography>
                 </div>
                 <ServicesAccordion />
+                <Button href={ServiceGuide} className={classes.btn}>Download our full service guide</Button>
                 <ServicesTable />
+                <Typography variant="h3" className={classes.interest}><em>Interested in learning more? Ready to book?</em></Typography>
+                <Button href="contact" className={classes.btn}>Request Free Consultation</Button>
                 {/* <div className={classes.difference}>
                     <Typography variant="h3">
                         <em>

@@ -2,7 +2,7 @@ import { Typography, Button } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import { NavLink } from "react-router-dom";
 
-var CoupleBouquet = "https://firebasestorage.googleapis.com/v0/b/knh-wedding-planning.appspot.com/o/carousel-images%2FCoupleBouquet.webp?alt=media&token=897a55c7-9e05-4e87-a10b-b0191aec28d3";
+var Vase = "https://firebasestorage.googleapis.com/v0/b/knh-wedding-planning.appspot.com/o/carousel-images%2FVase.webp?alt=media&token=511d037b-cf39-4f9a-8808-3793d4e3f334";
 const useStyles = makeStyles((theme) => ({
   bannerContainer: {
     width: '100%',
@@ -44,7 +44,7 @@ const useStyles = makeStyles((theme) => ({
     fontSize: '20px',
     padding: '24px',
     alignItems: 'center',
-    background: `url(${CoupleBouquet}) no-repeat center center`,
+    background: `url(${Vase}) no-repeat center center`,
     backgroundSize: 'cover',
     width: '100%',
     [theme.breakpoints.up('sm')]: {
@@ -146,7 +146,7 @@ export default function GreenerWedding() {
             </Typography>
           </span>
           <div className={classes.btnGroup}>
-            <Button to="/contact" className={classes.btn}><NavLink className={classes.nav} to="contact">Get In Touch</NavLink></Button>
+            <Button to="/contact" className={classes.btn}><NavLink className={classes.nav} to="contact">Request Free Consultation</NavLink></Button>
             <Button to="/green-wedding-guide" className={classes.btn}><NavLink className={classes.nav} to="green-wedding-guide">Green Wedding Guide</NavLink></Button>
           </div>
         </div>

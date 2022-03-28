@@ -52,14 +52,14 @@ export default function Footer() {
     const classes = useStyles();
     return (
         <div className={classes.footer}>
-            <Typography><a className={classes.emailLink} href="tel:720-725-2114">720.725.2114</a></Typography>
-            <Typography><a className={classes.emailLink} href="mailto:events@greenbeewed.com">events@greenbeewed.com</a></Typography>
+            <Typography variant="h4"><a className={classes.emailLink} href="tel:720-725-2114">720.725.2114</a></Typography>
+            <Typography variant="h4"    ><a className={classes.emailLink} href="mailto:events@greenbeewed.com">events@greenbeewed.com</a></Typography>
             <div className={classes.iconContainer}>
                 { /*<a className={classes.styledLink} aria-label="Link to Pinterest Board" rel="noreferrer" href="https://www.pinterest.com" target="_blank"><PinterestIcon fontSize="large" className={classes.socialMediaIcons} /></a>
                 <a className={classes.styledLink} aria-label="Link to Facebook Page" rel="noreferrer" href="https://www.facebook.com" target="_blank"><FacebookIcon fontSize="large" className={classes.socialMediaIcons} /></a> */ }
                 <a className={classes.styledLink} aria-label="Link to Instagram Page" rel="noreferrer" href="https://www.instagram.com/greenbeewed/" target="_blank"><InstagramIcon fontSize="large" className={classes.socialMediaIcons} /></a>
             </div>
-            <GBWButton variety="outline" to="/contact">Let's get in touch.</GBWButton>
+            <GBWButton variety="outline" to="/contact">Request Free Consultation</GBWButton>
             <Typography className={classes.copyright}>© 2022 Green Bee Weddings</Typography>
         </div>
     )

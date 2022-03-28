@@ -144,7 +144,7 @@ export default function ContactUs() {
     email_addr: '',
     questions: '',
   });
-  const [showConnect, setShowConnect] = useState(true);
+  const [showConnect, setShowConnect] = useState(false);
   const [showQuestion, setShowQuestion] = useState(false);
   const [showThankYou, setShowThankYou] = useState(false);
   const [showError, setShowError] = useState(false);
@@ -242,7 +242,7 @@ export default function ContactUs() {
         <Typography variant="h2">How can we help?</Typography>
         <Typography variant="body1">Let's get in touch!</Typography>
         <div className={classes.buttonContainer}>
-          <GBWButton className={classes.optionBtn} variety="green" onClick={handleConnect}>I'd like to connect and learn more</GBWButton>
+          <GBWButton className={classes.optionBtn} variety="green" onClick={handleConnect}>I'd like to request a free consultation</GBWButton>
           <GBWButton className={classes.optionBtn} variety="green" onClick={handleQuestion}>I just have a question or two</GBWButton>
         </div>
         {showConnect &&
